@@ -25,3 +25,4 @@ function Properties(){
 		</div>
 	)
 }
+export default Properties

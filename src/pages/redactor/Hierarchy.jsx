@@ -29,3 +29,5 @@ function Hierarchy(){
 		</div>
 	)
 }
+
+export default Hierarchy
