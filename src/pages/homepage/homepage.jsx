@@ -5,7 +5,7 @@ return (
             <div class="mx-10 flex justify-between items-center">
                 <a class="text-gray-200 text-2xl font-bold">логотип</a>
 
-                <a href="Untitled-1.html" class="text-gray-400 hover:text-gray-200">создать проект</a>
+                <a href="/redactor" class="text-gray-400 hover:text-gray-200">создать проект</a>
             </div>
         </nav>
 

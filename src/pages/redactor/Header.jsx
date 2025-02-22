@@ -1,6 +1,6 @@
 function Header(){
 	return(
-	<nav class="fixed inset-0 z-10 h-10 bg-gray-900 opacity-0 hover:opacity-100 overflow-auto">
+	<nav class="fixed inset-0 z-10 h-10 bg-gray-900 overflow-auto">
 		<div class="mx-10 flex justify-between items-center">
 			<a href="Untitled-2.html" class="text-gray-200 text-2xl font-bold">логотип</a>
 
