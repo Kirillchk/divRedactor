@@ -7,9 +7,6 @@ import { createSignal, Show } from "solid-js";
 function Redactor() {
 	const [getUIshown, setUIshown] = createSignal(true)
 	let body
-	function handleClick(){
-		handleInsertInto(body)
-	}
 	function handleInsertInto(into, what) {
 		into.innerHTML = what
 	}
@@ -31,9 +28,6 @@ function Redactor() {
 			<nav class="fixed inset-y-0 right-0 bg-gray-800 bg-opacity-95 h-screen w-48">
 				<Hierarchy/>
 				<Properties/>
-				<button on:click={handleClick}>
-					CLICK ME BITCH
-				</button>
 			</nav>
 		</Show>
 		</div>
