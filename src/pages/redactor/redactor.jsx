@@ -24,7 +24,7 @@ function Redactor() {
 	}
 	function fuf(arg){
 		arg.target.id = 'Is selected element'
-		arg.target.insertBefore(hint1, arg.target.childNode)
+		arg.target.parentNode.insertBefore(hint1, arg.target.nextSibling)
 		arg.target.parentNode.insertBefore(hint2, arg.target)
 	}
 	function fuf2(arg){
@@ -38,7 +38,7 @@ function Redactor() {
 	});
   return (
 	<div>
-		<div>
+		<di class='flex'>
 			<div on:mouseenter={fuf} on:mouseleave={fuf2}>
 				asdas
 			</div>
@@ -57,7 +57,7 @@ function Redactor() {
 			<div>
 				aelement
 			</div>
-		</div>
+		</di>
 		<Show when={getUIshown()}>
 			<div class="fixed inset-0">
 					<Header/>
