@@ -8,6 +8,7 @@ function Templates(props){
 		document.createElement('h1'),
 		document.createElement('a')
 	]
+	compsList[0].innerHTML = 'lorem'
 	return(
 		<>
 			<nav class="fixed inset-y-0 left-0 bg-gray-800 bg-opacity-95 h-screen w-48">
@@ -17,7 +18,7 @@ function Templates(props){
 					<For each={compsList} fallback={<div>Loading...</div>}>
 						{(comp) => 
 							<li>
-								<Template emitDragg={props.emitDragg}>
+								<Template emitDragg={props.emitDragg} emitDrop={props.emitDrop}>
 									{comp}
 								</Template>
 							</li>
