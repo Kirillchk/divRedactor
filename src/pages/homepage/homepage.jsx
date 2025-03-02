@@ -22,7 +22,7 @@ return (
                         <img src="https://avatars.mds.yandex.net/i?id=f64710d1da958f2fc884be6cb109e1faa58442e8ddd00328-5268818-images-thumbs&n=13" class="mt-6 w-1/3 h-2/3"/>
 
                         <div class="mt-6 w-2/5 h-auto text-xl text-left tracking-wider">
-                            вот одна из наших функций, мы просто ббзбзбзбзбзббзбзбз мы fffffffffffffffffffffffffffffffffffffffffffffffffffffffff у кого-то
+                            вот одна из наших функций, мы просто ббзбзбзбзasdasdsadasбзббзбзбз мы fffffffffffffffffffffffffffffffffffffffffffffffffffffffff у кого-то
                         </div>
                     </div>
                 </div>
