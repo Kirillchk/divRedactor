@@ -28,7 +28,7 @@ function Homepage() {
               <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between items-center">
                 <img
                   src="https://avatars.mds.yandex.net/i?id=f64710d1da958f2fc884be6cb109e1faa58442e8ddd00328-5268818-images-thumbs&n=13"
-                  className="mt-6 h-auto z-20"
+                  className="mt-6 h-auto "
                 />
                 <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider z-10">
                   тесттесттесттесттесттесттесттест
