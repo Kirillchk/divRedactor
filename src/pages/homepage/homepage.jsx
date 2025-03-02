@@ -21,9 +21,9 @@ function Homepage() {
         </div>
   
         {/* Основной контент */}
-        <nav className="bg-gray-600 rounded-lg mx-4 md:mx-24 mt-4 w-auto h-full mb-8">
+        <nav className="bg-gray-600 rounded-lg mx-4 md:mx-24 mt-7 w-auto h-full mb-8">
           {/* Карточка 1 */}
-          <div className="mx-4 md:mx-24 h-96 flex justify-center items-center">
+          <div className="mx-4 md:mx-24 h-96 justify-center items-center relative">
             <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
               <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between items-center">
                 <img
@@ -31,18 +31,18 @@ function Homepage() {
                   className="mt-6 h-auto z-20"
                 />
                 <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider z-10">
-                  а
+                  тесттесттесттесттесттесттесттест
                 </div>
               </div>
             </div>
           </div>
   
           {/* Карточка 2 */}
-          <div className="mx-4 md:mx-24 h-96 flex justify-center items-center">
+          <div className="mx-4 md:mx-24 h-96 flex justify-center items-center ">
             <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
               <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between items-center">
                 <div className="mt-6 w-full md:w-2/5 h-auto text-xl text-left tracking-wider">
-                  вот одна и
+                тесттесттесттесттесттесттесттесттесттесттест
                   
                 </div>
                 <img
@@ -62,7 +62,7 @@ function Homepage() {
                   className="mt-6  h-auto"
                 />
                 <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider">
-                  вот одна из
+                тесттесттесттесттесттесттесттесттесттесттест
                   
                 </div>
               </div>
