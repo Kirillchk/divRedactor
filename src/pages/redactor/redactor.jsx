@@ -41,8 +41,7 @@ function Redactor() {
 			on:mouseup={handleInsert}
 			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
 			<Show when={getShowGreen()}>
-				<div style="z-index: 5; position: absolute; height: 20px; width: 20px; background-color: green;">
-				</div>
+                <div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
 			</Show>
 		</div>
 	)
@@ -55,8 +54,7 @@ function Redactor() {
 			on:mouseup={handleInsert}
 			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
 			<Show when={getShowGreen()}>
-				<div style="z-index: 5; position: absolute; height: 20px; width: 20px; background-color: green;">
-				</div>
+            <div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
 			</Show>
 		</div>
 	)
