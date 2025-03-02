@@ -14,9 +14,12 @@ function Properties(props){
 		props.elementRef.classList.add(event.target.value)
 		console.log(props.elementRef.classList)
 	}
+	function handleChangeInnerText(event){
+		props.elementRef.innerText = event.target.value
+	}
 	function handleSubmit(event){
 		event.preventDefault()
-		console.log(props.elementRef.innerHTML)
+		//console.log(props.elementRef.innerHTML)
 	}
 	createEffect(() => {
 		console.log(props.elementRef)
@@ -40,39 +43,10 @@ function Properties(props){
 					</For>
         </select>
       </div>
-
-      <div>
-        <label for="mg">Margin (mg):</label>
-        <input
-          type="number"
-		  		min="0"
-          id="mg"
-          value={mg()}
-          onInput={(e) => setMg(e.target.value)}
-        />
-      </div>
-
-      <div>
-        <label for="pd">Padding (pd):</label>
-        <input
-          type="number"
-		  		min="0"
-          id="pd"
-          value={pd()}
-          onInput={(e) => setPd(e.target.value)}
-        />
-      </div>
-
-      <div>
-        <label for="color">Color:</label>
-        <input
-          type="color"
-          id="color"
-          value={color()}
-          onInput={(e) => setColor(e.target.value)}
-        />
-      </div>
-
+			<div>
+        <label for="inner-text">Inner text:</label>
+				<input on:change={handleChangeInnerText} type="text" name="inner-text" id="inner-text" />
+			</div>
       <button type="submit">Debug</button>
     </form>
   );

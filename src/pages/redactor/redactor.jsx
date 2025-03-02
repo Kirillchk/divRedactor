@@ -15,6 +15,7 @@ function Redactor() {
 	const [getShowGreen, setShowGreen] = createSignal(false)
 
 	function showProperties(e){
+		setREFERENCE(e.target)
 	}
 	function handleInsert() {
 		const insert = insertable.cloneNode(true)
@@ -77,6 +78,21 @@ function Redactor() {
 			<div on:click={showProperties} on:mouseenter={displayHint}>
 				2
 			</div >
+			<div class="bg-[#0000000000]" on:click={showProperties} on:mouseenter={displayHint}>
+				aaaaaaaaaaaaa
+				<div>
+					asd1
+				</div>
+				<div>
+					asd1
+				</div>
+				<div>
+					asd1
+				</div>
+				<div>
+					asd1
+				</div>
+			</div>
 			<div on:click={showProperties} on:mouseenter={displayHint}>
 				3
 			</div>
@@ -85,9 +101,6 @@ function Redactor() {
 			</div>
 			<div on:click={showProperties} on:mouseenter={displayHint}>
 				5
-			</div>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				6H
 			</div>
 		</div>
 		<Show when={getUIshown()}>

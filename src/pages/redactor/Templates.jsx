@@ -2,13 +2,21 @@ import Template from "./Components/Template";
 
 function Templates(props){
 	const compsList = [
-		document.createElement('div'),
 		document.createElement('aside'),
-		document.createElement('span'),
-		document.createElement('h1'),
-		document.createElement('a')
+		document.createElement('footer'),
+		document.createElement('header'),
+		document.createElement('nav'),
+		document.createElement('div'),
+		document.createElement('li'),
+		document.createElement('p'),
+		document.createElement('ul'),
+		document.createElement('a'),
+		document.createElement('img'),
+		document.createElement('video'),
+		document.createElement('button'),
+		document.createElement('input')
 	]
-	compsList[0].innerHTML = 'lorem'
+	compsList.forEach((comp) => comp.innerText = 'lorem' )
 	return(
 		<>
 			<nav class="fixed inset-y-0 left-0 bg-gray-800 bg-opacity-95 h-screen w-48">
