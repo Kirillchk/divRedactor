@@ -2,7 +2,9 @@ import { createSignal, createEffect } from 'solid-js';
 
 function Properties(props){
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
+	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
+	const [position, setPosition] = createSignal('static')
   const [mg, setMg] = createSignal(0);
   const [pd, setPd] = createSignal(0);
   const [color, setColor] = createSignal('#000000');
@@ -10,6 +12,13 @@ function Properties(props){
 	function handleDisplayChange(event){
 		displays.forEach((d)=>{
 			props.elementRef.classList.remove(d)
+		})
+		props.elementRef.classList.add(event.target.value)
+		console.log(props.elementRef.classList)
+	}
+	function handlePositionChange(event){
+		positions.forEach((p) =>{
+			props.elementRef.classList.remove(p)
 		})
 		props.elementRef.classList.add(event.target.value)
 		console.log(props.elementRef.classList)
@@ -37,13 +46,27 @@ function Properties(props){
 								<div class="ml-2">
 										display
 								</div>
-
 								<select class="bg-gray-900 w-1/2 h-4 ml-8" id="display" value={display()} onChange={handleDisplayChange}>
 										<For each={displays}>
 												{
 														(d) =>
 																<option value={d}>
 																		{d}
+																</option>
+												}
+										</For>
+								</select>
+						</div>
+						<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+								<div class="ml-2">
+										display
+								</div>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8" id="display" value={position()} onChange={handlePositionChange}>
+										<For each={positions}>
+												{
+														(p) =>
+																<option value={p}>
+																		{p}
 																</option>
 												}
 										</For>
