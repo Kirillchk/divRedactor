@@ -15,6 +15,7 @@ function Redactor() {
 	const [getShowGreen, setShowGreen] = createSignal(false)
 
 	function showProperties(e){
+		setREFERENCE(e.target)
 	}
 	function handleInsert() {
 		const insert = insertable.cloneNode(true)
@@ -40,8 +41,7 @@ function Redactor() {
 			on:mouseup={handleInsert}
 			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
 			<Show when={getShowGreen()}>
-				<div style="z-index: 5; position: absolute; height: 20px; width: 20px; background-color: green;">
-				</div>
+                <div class="animate-pulse opacity-70 absolute z-5 rounded-full bg-blue-400 h-12 w-12"></div>
 			</Show>
 		</div>
 	)
@@ -54,8 +54,7 @@ function Redactor() {
 			on:mouseup={handleInsert}
 			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
 			<Show when={getShowGreen()}>
-				<div style="z-index: 5; position: absolute; height: 20px; width: 20px; background-color: green;">
-				</div>
+            <div class="animate-pulse opacity-70 absolute z-5 rounded-full bg-blue-400 h-12 w-12"></div>
 			</Show>
 		</div>
 	)
@@ -77,6 +76,21 @@ function Redactor() {
 			<div on:click={showProperties} on:mouseenter={displayHint}>
 				2
 			</div >
+			<div class="bg-[#0000000000]" on:click={showProperties} on:mouseenter={displayHint}>
+				aaaaaaaaaaaaa
+				<div>
+					asd1
+				</div>
+				<div>
+					asd1
+				</div>
+				<div>
+					asd1
+				</div>
+				<div>
+					asd1
+				</div>
+			</div>
 			<div on:click={showProperties} on:mouseenter={displayHint}>
 				3
 			</div>
@@ -85,9 +99,6 @@ function Redactor() {
 			</div>
 			<div on:click={showProperties} on:mouseenter={displayHint}>
 				5
-			</div>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				6H
 			</div>
 		</div>
 		<Show when={getUIshown()}>
