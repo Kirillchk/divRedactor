@@ -59,9 +59,9 @@ function Properties(props){
 					</div>
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
-								display
+							position
 						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8" id="display" value={position()} onChange={handlePositionChange}>
+						<select class="bg-gray-900 w-1/2 h-4 ml-6 mr-1" id="display" value={position()} onChange={handlePositionChange}>
 								<For each={positions}>
 									{
 										(p) =>
