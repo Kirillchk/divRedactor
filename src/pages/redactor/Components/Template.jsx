@@ -1,14 +1,12 @@
 function Template(props){
 	const name = `${props.name || props.children.tagName}`
 	const objectToInsert = props.children
-	function emitDragg(){
+	function emitDragg(event){
+		event.preventDefault();
 		props.emitDragg(objectToInsert)
 	}
-	function emitDrop(){
-		props.emitDrop(objectToInsert)
-	}
 	return(
-		<div draggable='true' class="select-none cursor-move" on:dragstart={emitDragg} on:dragend={emitDrop} >
+		<div draggable='true' class="select-none cursor-move" on:dragstart={emitDragg} >
 			{name}
 		</div>
 	)

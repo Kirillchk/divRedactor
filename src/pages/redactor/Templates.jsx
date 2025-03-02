@@ -18,7 +18,7 @@ function Templates(props){
 					<For each={compsList} fallback={<div>Loading...</div>}>
 						{(comp) => 
 							<li>
-								<Template emitDragg={props.emitDragg} emitDrop={props.emitDrop}>
+								<Template emitDragg={props.emitDragg}>
 									{comp}
 								</Template>
 							</li>
