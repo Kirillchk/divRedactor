@@ -20,15 +20,17 @@ function Templates(props){
 	return(
 		<>
 			<nav class="fixed inset-y-0 left-0 bg-gray-800 bg-opacity-95 h-screen w-48">
-				<div class="mx-2 h-10 text-gray-300 flex justify-center items-center">шаблоны элементов</div>
+				<div class="mt-10 mx-2 h-10 text-gray-300 flex justify-center items-center">шаблоны элементов</div>
 				<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 				<ul>
 					<For each={compsList} fallback={<div>Loading...</div>}>
 						{(comp) => 
-							<li>
-								<Template emitDragg={props.emitDragg}>
-									{comp}
-								</Template>
+							<li class="mx-2 h-12 flex justify-center items-center">
+                                <div class="bg-gray-700 bg-opacity-95 rounded-lg h-10 w-48 text-gray-400 hover:text-gray-200 hover:bg-gray-600 flex justify-around items-center">                                    
+                                    <Template emitDragg={props.emitDragg}>
+                                        {comp}
+                                    </Template>
+                                </div>
 							</li>
 						}
 					</For>
