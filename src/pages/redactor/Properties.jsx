@@ -35,7 +35,7 @@ function Properties(props){
 	})
   return (
 	<form class="h-3/5" onSubmit={handleSubmit}>
-
+		<div class="-mt-4 mx-2 h-10 text-gray-300 flex justify-center items-center">css редактор</div>
 		<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
 		<div class="mx-2 mt-1 h-5/6 flex justify-center">
@@ -56,6 +56,10 @@ function Properties(props){
 								}
 							</For>
 						</select>
+					</div>
+					<div>
+						<label for="inner-text">Inner text:</label>
+						<input on:change={handleChangeInnerText} type="text" name="inner-text" id="inner-text" />
 					</div>
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
