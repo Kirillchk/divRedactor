@@ -10,6 +10,8 @@ function Redactor() {
 	let after;
 	let insertable;
 
+	// wtf?
+	const [update, setupdate] = createSignal({})
 	const [REFERENCE, setREFERENCE] = createSignal({})
 	const [getUIshown, setUIshown] = createSignal(false)
 	const [getShowGreen, setShowGreen] = createSignal(false)
@@ -25,39 +27,16 @@ function Redactor() {
 			refer.after(insert);
 		} else {
 			refer.before(insert);
-		} setShowGreen(false)
+		} setShowGreen(false) 
+		if (update().trigger){
+			update().trigger()
+		}
 	}
 	function displayHint(arg){
 		refer = arg.target
-		arg.target.parentNode.insertBefore(hint1, arg.target.nextSibling)
-		arg.target.parentNode.insertBefore(hint2, arg.target)
+		arg.target.parentNode.insertBefore(hint2, arg.target.nextSibling)
+		arg.target.parentNode.insertBefore(hint1, arg.target)
 	}
-	const hint1 = (
-		<div
-			on:mouseenter={() => {
-				console.log('hint 2 hovered')
-				after=true
-			}} 
-			on:mouseup={handleInsert}
-			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
-			<Show when={getShowGreen()}>
-                <div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
-			</Show>
-		</div>
-	)
-	const hint2 = (
-		<div 
-			on:mouseenter={() => {
-				console.log('hint 1 hovered')
-				after=false
-			}} 
-			on:mouseup={handleInsert}
-			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
-			<Show when={getShowGreen()}>
-            <div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
-			</Show>
-		</div>
-	)
 	document.addEventListener('keydown', function(event) {
 		if (event.code === 'KeyH' && event.shiftKey) {
 			setUIshown(!getUIshown())
@@ -67,6 +46,32 @@ function Redactor() {
 	createEffect(()=>{
 		setREFERENCE(firstelement)
 	})
+	const hint2 = (
+		<div
+			on:mouseenter={() => {
+				console.log('hint 2 hovered')
+				after=true
+			}} 
+			on:mouseup={handleInsert}
+			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
+			<Show when={getShowGreen()}>
+				<div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
+			</Show>
+		</div>
+	)
+	const hint1 =(
+		<div 
+			on:mouseenter={() => {
+				console.log('hint 1 hovered')
+				after=false
+			}} 
+			on:mouseup={handleInsert}
+			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
+			<Show when={getShowGreen()}>
+				<div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
+			</Show>
+		</div>
+	)
   return (
 	<div>
 		<div ref={firstelement}>
@@ -111,7 +116,7 @@ function Redactor() {
 				}}
 			/>
 			<nav class="fixed inset-y-0 right-0 bg-gray-800 bg-opacity-95 h-screen w-48">
-				<Hierarchy/>
+				<Hierarchy emitUpdate={/*wtf?*/setupdate} bodyRef={REFERENCE()}/>
 				<Properties elementRef={REFERENCE()}/>
 			</nav>
 		</Show>

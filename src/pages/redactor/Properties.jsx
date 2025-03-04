@@ -5,9 +5,9 @@ function Properties(props){
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
 	const [position, setPosition] = createSignal('static')
-  const [mg, setMg] = createSignal(0);
-  const [pd, setPd] = createSignal(0);
-  const [color, setColor] = createSignal('#000000');
+	const [mg, setMg] = createSignal(0);
+	const [pd, setPd] = createSignal(0);
+	const [color, setColor] = createSignal('#000000');
 
 	function handleDisplayChange(event){
 		displays.forEach((d)=>{
@@ -49,11 +49,10 @@ function Properties(props){
 
 						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value={display()} onChange={handleDisplayChange}>
 							<For each={displays}>
-								{
-									(d) =>
-										<option value={d}>
-											{d}
-										</option>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
 								}
 							</For>
 						</select>
@@ -75,9 +74,9 @@ function Properties(props){
 								<For each={positions}>
 									{
 										(p) =>
-												<option value={p}>
-														{p}
-												</option>
+											<option value={p}>
+												{p}
+											</option>
 									}
 								</For>
 						</select>
