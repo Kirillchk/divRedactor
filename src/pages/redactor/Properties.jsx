@@ -7,8 +7,8 @@ function Properties(props){
 		"20", "24", "28", "32", "36", "40", "44", "48", "52", 
 		"56", "60", "64", "72", "80", "96"
 	];
-	const margins = ['mt','mr','ml','mb']
-	const paddings = ['pt', 'pr', 'pl', 'pb']
+	const margins = ['mt','mr','mb','ml']
+	const paddings = ['pt', 'pr', 'pb', 'pl']
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
@@ -132,6 +132,8 @@ function Properties(props){
 		})
 		props.elementRef.classList.add(res)
 	}
+	const functionP = [ handlePtUpdate, handlePrUpdate, handlePbUpdate, handlePlUpdate]
+	const functionM = [ handleMtUpdate, handleMrUpdate, handleMbUpdate, handleMlUpdate]
 	createEffect(() => {
 		console.log(props.elementRef)
 	})
@@ -185,12 +187,12 @@ function Properties(props){
 					</div>
 					<For each={margins}>
 						{
-							(m) => 
+							(m, ind) => 
 							<div class='flex justify-between items-center'>
 								<div class="ml-2">
 									{m}
 								</div>
-								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={m} value='0' onChange={handleMtUpdate}>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={m} value='0' onChange={functionM[ind()]}>
 									<For each={tailwindValues}>
 										{(d) =>
 											<option value={d}>
@@ -204,12 +206,12 @@ function Properties(props){
 					</For>
 					<For each={paddings}>
 						{
-							(p) => 
+							(p, ind) => 
 							<div class='flex justify-between items-center'>
 								<div class="ml-2">
 									{p}
 								</div>
-								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={p} value='0' onChange={handleMtUpdate}>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={p} value='0' onChange={functionP[ind()]}>
 									<For each={tailwindValues}>
 										{(d) =>
 											<option value={d}>

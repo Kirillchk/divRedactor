@@ -11,12 +11,14 @@ function Redactor() {
 	let insertable;
 
 	// wtf?
+	const [ReferenceFor, setReferenceFor] = createSignal({})
 	const [update, setupdate] = createSignal({})
 	const [REFERENCE, setREFERENCE] = createSignal({})
 	const [getUIshown, setUIshown] = createSignal(false)
 	const [getShowGreen, setShowGreen] = createSignal(false)
 
 	function showProperties(e){
+		setReferenceFor(e.target)
 	}
 	function handleInsert() {
 		const insert = insertable.cloneNode(true)
@@ -116,7 +118,7 @@ function Redactor() {
 			/>
 			<nav class="fixed inset-y-0 right-0 bg-gray-800 bg-opacity-95 h-screen w-48">
 				<Hierarchy emitUpdate={/*wtf?*/setupdate} bodyRef={REFERENCE()}/>
-				<Properties elementRef={REFERENCE()}/>
+				<Properties elementRef={ReferenceFor()}/>
 			</nav>
 		</Show>
 	</div>
