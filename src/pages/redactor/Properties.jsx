@@ -186,11 +186,11 @@ function Properties(props){
 					<For each={margins}>
 						{
 							(m) => 
-							<div>
+							<div class='flex justify-between items-center'>
 								<div class="ml-2">
 									{m}
 								</div>
-								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id={m} value='0' onChange={handleMtUpdate}>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={m} value='0' onChange={handleMtUpdate}>
 									<For each={tailwindValues}>
 										{(d) =>
 											<option value={d}>
@@ -205,11 +205,11 @@ function Properties(props){
 					<For each={paddings}>
 						{
 							(p) => 
-							<div>
+							<div class='flex justify-between items-center'>
 								<div class="ml-2">
 									{p}
 								</div>
-								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id={p} value='0' onChange={handleMtUpdate}>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={p} value='0' onChange={handleMtUpdate}>
 									<For each={tailwindValues}>
 										{(d) =>
 											<option value={d}>
