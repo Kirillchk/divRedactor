@@ -1,6 +1,12 @@
 import { createSignal, createEffect } from 'solid-js';
 
 function Properties(props){
+	const tailwindValues = [
+		"0", "px", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", 
+		"5", "6", "7", "8", "9", "10", "11", "12", "14", "16", 
+		"20", "24", "28", "32", "36", "40", "44", "48", "52", 
+		"56", "60", "64", "72", "80", "96"
+	];
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
@@ -176,37 +182,116 @@ function Properties(props){
 						</select>
 					</div>
 					<div>
-						<label htmlFor="mt">Margin top</label>
-						<input min="0" value="0" type="number" name="mt" id="mt" on:change={handleMtUpdate}/>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handleMtUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 					</div>
 					<div>
-						<label htmlFor="mr">Margin right</label>
-						<input min="0" value="0" type="number" name="mr" id="mr" on:change={handleMrUpdate}/>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handleMrUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 					</div>
 					<div>
-						<label htmlFor="mb">Margin bottom</label>
-						<input min="0" value="0" type="number" name="mb" id="mb" on:change={handleMbUpdate}/>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handleMbUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 					</div>
 					<div>
-						<label htmlFor="ml">Margin left</label>
-						<input min="0" value="0" type="number" name="ml" id="ml" on:change={handleMlUpdate}/>
-					</div>
-
-					<div>
-						<label htmlFor="pt">padding top</label>
-						<input min="0" value="0" type="number" name="pt" id="pt" on:change={handlePtUpdate}/>
-					</div>
-					<div>
-						<label htmlFor="pr">padding right</label>
-						<input min="0" value="0" type="number" name="pr" id="pr" on:change={handlePrUpdate}/>
-					</div>
-					<div>
-						<label htmlFor="pb">padding bottom</label>
-						<input min="0" value="0" type="number" name="pb" id="pb" on:change={handlePbUpdate}/>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePrUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 					</div>
 					<div>
-						<label htmlFor="pl">padding left</label>
-						<input min="0" value="0" type="number" name="pl" id="pl" on:change={handlePlUpdate}/>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePtUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
+					</div>
+					<div>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePrUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
+					</div>
+					<div>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePbUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
+					</div>
+					<div>
+						<div class="ml-2">
+							display
+						</div>
+						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePrUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 					</div>
 
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
