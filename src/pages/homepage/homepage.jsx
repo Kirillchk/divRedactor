@@ -30,7 +30,7 @@ function Homepage() {
                   src="https://avatars.mds.yandex.net/i?id=f64710d1da958f2fc884be6cb109e1faa58442e8ddd00328-5268818-images-thumbs&n=13"
                   className="mt-6 h-auto"
                 />
-                <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider leading-loose">
+                <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider leading-7">
                 наш проект является конструктором сайтов, с возможностью изменения разметки html и внешнего вида css, созданным для облегчённого создания сайтов и более наглядного обучения в сфере front-end'а
                 </div>
               </div>
@@ -41,8 +41,8 @@ function Homepage() {
           <div className="mx-4 md:mx-24 h-96 flex justify-center items-center ">
             <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
               <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-                <div className="mt-6 w-full md:w-2/5 h-auto text-xl text-left tracking-wider leading-loose">
-                    в верхнем меню вы можете найти такие функции, как:<br />меню - переход на главную страницу сайта<br />загрузить - открыть внешний проект<br />сохранить - выгрузить созданный проект<br />новый проект - начать с чистого листа
+                <div className="mt-6 w-full md:w-2/5 h-auto text-xl text-left tracking-wider leading-7">
+                    в верхнем меню вы можете найти такие функции, как:<br />меню ⟶ переход на главную страницу сайта<br />загрузить ⟶ открыть внешний проект<br />сохранить ⟶ выгрузить созданный проект<br />новый проект ⟶ начать с чистого листа
                 </div>
                 <img
                   src="https://avatars.mds.yandex.net/i?id=f64710d1da958f2fc884be6cb109e1faa58442e8ddd00328-5268818-images-thumbs&n=13"
@@ -60,7 +60,7 @@ function Homepage() {
                   src="https://avatars.mds.yandex.net/i?id=f64710d1da958f2fc884be6cb109e1faa58442e8ddd00328-5268818-images-thumbs&n=13"
                   className="mt-6  h-auto"
                 />
-                <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider leading-loose">
+                <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider leading-7">
                     в левой части экрана распологается список готовых шаблонов элементов, которые вы можете использовать при создании своего проекта, в дальнейшем вы сможете их видоизменять  
                 </div>
               </div>
@@ -71,7 +71,7 @@ function Homepage() {
         <div className="mx-4 md:mx-24 h-96 flex justify-center items-center ">
             <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
               <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-                <div className="mt-6 w-full md:w-2/5 h-auto text-xl text-left tracking-wider leading-loose">
+                <div className="mt-6 w-full md:w-2/5 h-auto text-xl text-left tracking-wider leading-7">
                     справа сверху находится окно с иерархией вашего проекта, с помощью него вы можете отслеживать вложенность ваших элементов, а также группы, к которым они принадлежат
                 </div>
                 <img
@@ -90,7 +90,7 @@ function Homepage() {
                   src="https://avatars.mds.yandex.net/i?id=f64710d1da958f2fc884be6cb109e1faa58442e8ddd00328-5268818-images-thumbs&n=13"
                   className="mt-6  h-auto"
                 />
-                <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider leading-loose">
+                <div className="mt-6 w-screen md:w-2/5 h-auto text-xl text-left tracking-wider leading-7">
                     в нижней же части правого меню находится редактор css, изменяя параметры выбранного свойства объекта вы сможете изменять внешний вид элементов
                 </div>
               </div>
