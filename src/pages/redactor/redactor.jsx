@@ -17,7 +17,6 @@ function Redactor() {
 	const [getShowGreen, setShowGreen] = createSignal(false)
 
 	function showProperties(e){
-		setREFERENCE(e.target)
 	}
 	function handleInsert() {
 		const insert = insertable.cloneNode(true)
