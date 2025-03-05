@@ -7,6 +7,8 @@ function Properties(props){
 		"20", "24", "28", "32", "36", "40", "44", "48", "52", 
 		"56", "60", "64", "72", "80", "96"
 	];
+	const margins = ['mt','mr','ml','mb']
+	const paddings = ['pt', 'pr', 'pl', 'pb']
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
@@ -181,118 +183,44 @@ function Properties(props){
 								</For>
 						</select>
 					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handleMtUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handleMrUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handleMbUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePrUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePtUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePrUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePbUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
-					<div>
-						<div class="ml-2">
-							display
-						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value='0' onChange={handlePrUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
-					</div>
+					<For each={margins}>
+						{
+							(m) => 
+							<div>
+								<div class="ml-2">
+									{m}
+								</div>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id={m} value='0' onChange={handleMtUpdate}>
+									<For each={tailwindValues}>
+										{(d) =>
+											<option value={d}>
+												{d}
+											</option>
+										}
+									</For>
+								</select>
+							</div>
+						}
+					</For>
+					<For each={paddings}>
+						{
+							(p) => 
+							<div>
+								<div class="ml-2">
+									{p}
+								</div>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id={p} value='0' onChange={handleMtUpdate}>
+									<For each={tailwindValues}>
+										{(d) =>
+											<option value={d}>
+												{d}
+											</option>
+										}
+									</For>
+								</select>
+							</div>
+						}
+					</For>
 
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
