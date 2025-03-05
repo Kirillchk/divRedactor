@@ -5,8 +5,6 @@ function Properties(props){
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
 	const [position, setPosition] = createSignal('static')
-	const [mg, setMg] = createSignal(0);
-	const [pd, setPd] = createSignal(0);
 	const [color, setColor] = createSignal('#000000');
 
 	function handleDisplayChange(event){
@@ -29,6 +27,102 @@ function Properties(props){
 	function handleSubmit(event){
 		event.preventDefault()
 		//console.log(props.elementRef.innerHTML)
+	}
+	function handleMtUpdate(event){
+		const name = 'mt'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handleMrUpdate(event){
+		const name = 'mr'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handleMbUpdate(event){
+		const name = 'mb'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handleMlUpdate(event){
+		const name = 'ml'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePtUpdate(event){
+		const name = 'pt'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePrUpdate(event){
+		const name = 'pr'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePbUpdate(event){
+		const name = 'pb'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePlUpdate(event){
+		const name = 'pl'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
 	}
 	createEffect(() => {
 		console.log(props.elementRef)
@@ -81,21 +175,38 @@ function Properties(props){
 								</For>
 						</select>
 					</div>
-
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
-						<div class="ml-2">
-							margin
-						</div>
-
-						<input class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" type="number" min="0" id="mg" value={mg()} onInput={(e) => setMg(e.target.value)}></input>
+					<div>
+						<label htmlFor="mt">Margin top</label>
+						<input min="0" value="0" type="number" name="mt" id="mt" on:change={handleMtUpdate}/>
+					</div>
+					<div>
+						<label htmlFor="mr">Margin right</label>
+						<input min="0" value="0" type="number" name="mr" id="mr" on:change={handleMrUpdate}/>
+					</div>
+					<div>
+						<label htmlFor="mb">Margin bottom</label>
+						<input min="0" value="0" type="number" name="mb" id="mb" on:change={handleMbUpdate}/>
+					</div>
+					<div>
+						<label htmlFor="ml">Margin left</label>
+						<input min="0" value="0" type="number" name="ml" id="ml" on:change={handleMlUpdate}/>
 					</div>
 
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
-						<div class="ml-2">
-							padding
-						</div>
-
-						<input class="bg-gray-900 w-1/2 h-4 ml-6 mr-1" type="number" min="0" id="pd" value={pd()} onInput={(e) => setPd(e.target.value)}></input>
+					<div>
+						<label htmlFor="pt">padding top</label>
+						<input min="0" value="0" type="number" name="pt" id="pt" on:change={handlePtUpdate}/>
+					</div>
+					<div>
+						<label htmlFor="pr">padding right</label>
+						<input min="0" value="0" type="number" name="pr" id="pr" on:change={handlePrUpdate}/>
+					</div>
+					<div>
+						<label htmlFor="pb">padding bottom</label>
+						<input min="0" value="0" type="number" name="pb" id="pb" on:change={handlePbUpdate}/>
+					</div>
+					<div>
+						<label htmlFor="pl">padding left</label>
+						<input min="0" value="0" type="number" name="pl" id="pl" on:change={handlePlUpdate}/>
 					</div>
 
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
