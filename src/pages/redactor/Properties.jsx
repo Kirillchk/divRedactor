@@ -136,7 +136,7 @@ function Properties(props){
 		console.log(props.elementRef)
 	})
   return (
-	<form class="h-3/5" onSubmit={handleSubmit}>
+	<form class="h-2/5" onSubmit={handleSubmit}>
         <div class="-mt-4 mx-2 h-10 text-gray-300 flex justify-center items-center">css редактор</div>
 
 		<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
