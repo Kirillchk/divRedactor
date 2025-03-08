@@ -10,12 +10,15 @@ function Redactor() {
 	let after;
 	let insertable;
 
+	// wtf?
+	const [ReferenceFor, setReferenceFor] = createSignal({})
+	const [update, setupdate] = createSignal({})
 	const [REFERENCE, setREFERENCE] = createSignal({})
 	const [getUIshown, setUIshown] = createSignal(false)
 	const [getShowGreen, setShowGreen] = createSignal(false)
 
 	function showProperties(e){
-		setREFERENCE(e.target)
+		setReferenceFor(e.target)
 	}
 	function handleInsert() {
 		const insert = insertable.cloneNode(true)
@@ -25,39 +28,16 @@ function Redactor() {
 			refer.after(insert);
 		} else {
 			refer.before(insert);
-		} setShowGreen(false)
+		} setShowGreen(false) 
+		if (update().trigger){
+			update().trigger()
+		}
 	}
 	function displayHint(arg){
 		refer = arg.target
-		arg.target.parentNode.insertBefore(hint1, arg.target.nextSibling)
-		arg.target.parentNode.insertBefore(hint2, arg.target)
+		arg.target.parentNode.insertBefore(hint2, arg.target.nextSibling)
+		arg.target.parentNode.insertBefore(hint1, arg.target)
 	}
-	const hint1 = (
-		<div
-			on:mouseenter={() => {
-				console.log('hint 2 hovered')
-				after=true
-			}} 
-			on:mouseup={handleInsert}
-			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
-			<Show when={getShowGreen()}>
-                <div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
-			</Show>
-		</div>
-	)
-	const hint2 = (
-		<div 
-			on:mouseenter={() => {
-				console.log('hint 1 hovered')
-				after=false
-			}} 
-			on:mouseup={handleInsert}
-			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
-			<Show when={getShowGreen()}>
-            <div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
-			</Show>
-		</div>
-	)
 	document.addEventListener('keydown', function(event) {
 		if (event.code === 'KeyH' && event.shiftKey) {
 			setUIshown(!getUIshown())
@@ -67,39 +47,66 @@ function Redactor() {
 	createEffect(()=>{
 		setREFERENCE(firstelement)
 	})
+	const hint2 = (
+		<div
+			on:mouseenter={() => {
+				console.log('hint 2 hovered')
+				after=true
+			}} 
+			on:mouseup={handleInsert}
+			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
+			<Show when={getShowGreen()}>
+				<div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
+			</Show>
+		</div>
+	)
+	const hint1 =(
+		<div 
+			on:mouseenter={() => {
+				console.log('hint 1 hovered')
+				after=false
+			}} 
+			on:mouseup={handleInsert}
+			style="display:flex; position: relative;  justify-content: center; align-items: center; ">
+			<Show when={getShowGreen()}>
+				<div class="absolute z-5 animate-pulse rounded-full bg-blue-300 h-8 w-8"></div>
+			</Show>
+		</div>
+	)
   return (
 	<div>
 		<div ref={firstelement}>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				1
-			</div>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				2
-			</div >
-			<div class="" on:click={showProperties} on:mouseenter={displayHint}>
-				aaaaaaaaaaaaa
-				<div>
-					asd1
-				</div>
-				<div>
-					asd1
-				</div>
-				<div>
-					asd1
-				</div>
-				<div>
-					asd1
-				</div>
-			</div>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				3
-			</div>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				4
-			</div>
-			<div on:click={showProperties} on:mouseenter={displayHint}>
-				5
-			</div>
+			
+		<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+  <header
+    on:click={showProperties}
+    on:mouseenter={displayHint}
+    class="bg-blue-500 text-white p-6 rounded-lg shadow-lg mb-8 cursor-pointer"
+  >
+    <h1 class="text-4xl font-bold">Welcome to Our Landing Page</h1>
+    <p class="mt-2">Click or hover to see details!</p>
+  </header>
+
+  <main
+    on:click={showProperties}
+    on:mouseenter={displayHint}
+    class="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full cursor-pointer"
+  >
+    <h2 class="text-2xl font-semibold mb-4">About Us</h2>
+    <p class="text-gray-700">
+      We are a company dedicated to creating amazing web experiences. Hover over or click any component to see its properties.
+    </p>
+  </main>
+
+  <footer
+    on:click={showProperties}
+    on:mouseenter={displayHint}
+    class="mt-8 bg-gray-800 text-white p-4 rounded-lg shadow-lg w-full text-center cursor-pointer"
+  >
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+  </footer>
+</div>
+
 		</div>
 		<Show when={getUIshown()}>
 			<Header/>
@@ -111,8 +118,8 @@ function Redactor() {
 				}}
 			/>
 			<nav class="fixed inset-y-0 right-0 bg-gray-800 bg-opacity-95 h-screen w-48">
-				<Hierarchy/>
-				<Properties elementRef={REFERENCE()}/>
+				<Hierarchy emitUpdate={/*wtf?*/setupdate} bodyRef={REFERENCE()}/>
+				<Properties elementRef={ReferenceFor()}/>
 			</nav>
 		</Show>
 	</div>

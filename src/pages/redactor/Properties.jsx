@@ -1,13 +1,19 @@
 import { createSignal, createEffect } from 'solid-js';
 
 function Properties(props){
+	const tailwindValues = [
+		"0", "px", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", 
+		"5", "6", "7", "8", "9", "10", "11", "12", "14", "16", 
+		"20", "24", "28", "32", "36", "40", "44", "48", "52", 
+		"56", "60", "64", "72", "80", "96"
+	];
+	const margins = ['mt','mr','ml','mb']
+	const paddings = ['pt', 'pr', 'pl', 'pb']
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
 	const [position, setPosition] = createSignal('static')
-  const [mg, setMg] = createSignal(0);
-  const [pd, setPd] = createSignal(0);
-  const [color, setColor] = createSignal('#000000');
+	const [color, setColor] = createSignal('#000000');
 
 	function handleDisplayChange(event){
 		displays.forEach((d)=>{
@@ -30,6 +36,102 @@ function Properties(props){
 		event.preventDefault()
 		//console.log(props.elementRef.innerHTML)
 	}
+	function handleMtUpdate(event){
+		const name = 'mt'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handleMrUpdate(event){
+		const name = 'mr'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handleMbUpdate(event){
+		const name = 'mb'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handleMlUpdate(event){
+		const name = 'ml'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePtUpdate(event){
+		const name = 'pt'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePrUpdate(event){
+		const name = 'pr'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePbUpdate(event){
+		const name = 'pb'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
+	function handlePlUpdate(event){
+		const name = 'pl'
+		const value = event.target.value
+		const res = `${name}-${value}`
+		console.log(props.elementRef.classList)
+		props.elementRef.classList.forEach((cl)=>{
+			if(cl[0]+cl[1]==name){
+				props.elementRef.classList.remove(cl)
+			}
+		})
+		props.elementRef.classList.add(res)
+	}
 	createEffect(() => {
 		console.log(props.elementRef)
 	})
@@ -49,11 +151,10 @@ function Properties(props){
 
 						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value={display()} onChange={handleDisplayChange}>
 							<For each={displays}>
-								{
-									(d) =>
-										<option value={d}>
-											{d}
-										</option>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
 								}
 							</For>
 						</select>
@@ -75,29 +176,51 @@ function Properties(props){
 								<For each={positions}>
 									{
 										(p) =>
-												<option value={p}>
-														{p}
-												</option>
+											<option value={p}>
+												{p}
+											</option>
 									}
 								</For>
 						</select>
 					</div>
-
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
-						<div class="ml-2">
-							margin
-						</div>
-
-						<input class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" type="number" min="0" id="mg" value={mg()} onInput={(e) => setMg(e.target.value)}></input>
-					</div>
-
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
-						<div class="ml-2">
-							padding
-						</div>
-
-						<input class="bg-gray-900 w-1/2 h-4 ml-6 mr-1" type="number" min="0" id="pd" value={pd()} onInput={(e) => setPd(e.target.value)}></input>
-					</div>
+					<For each={margins}>
+						{
+							(m) => 
+							<div class='flex justify-between items-center'>
+								<div class="ml-2">
+									{m}
+								</div>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={m} value='0' onChange={handleMtUpdate}>
+									<For each={tailwindValues}>
+										{(d) =>
+											<option value={d}>
+												{d}
+											</option>
+										}
+									</For>
+								</select>
+							</div>
+						}
+					</For>
+					<For each={paddings}>
+						{
+							(p) => 
+							<div class='flex justify-between items-center'>
+								<div class="ml-2">
+									{p}
+								</div>
+								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={p} value='0' onChange={handleMtUpdate}>
+									<For each={tailwindValues}>
+										{(d) =>
+											<option value={d}>
+												{d}
+											</option>
+										}
+									</For>
+								</select>
+							</div>
+						}
+					</For>
 
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
