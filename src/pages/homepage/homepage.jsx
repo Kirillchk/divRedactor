@@ -2,7 +2,7 @@ function Homepage() {
     return (
       <div className="bg-gray-800 overflow-x-hidden" >
         {/* Навигационная панель */}
-        <nav className="fixed inset-0 z-10 h-10 bg-gray-900 opacity-100 hover:opacity-100">
+        <nav className="fixed inset-0 z-10 h-10 bg-gray-900">
           <div className="mx-10 flex justify-between items-center">
             <a className="text-gray-200 text-2xl font-bold">логотип</a>
             <a href="/redactor" className="text-gray-400 hover:text-gray-200">
