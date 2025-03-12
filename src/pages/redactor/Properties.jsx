@@ -183,6 +183,7 @@ function Properties(props){
 								</For>
 						</select>
 					</div>
+                    {/*
 					<For each={margins}>
 						{
 							(m) => 
@@ -201,7 +202,20 @@ function Properties(props){
 								</select>
 							</div>
 						}
-					</For>
+					</For>*/}
+
+                    <div class="my-2 flex justify-evenly items-center">
+                        <div class="w-4 h-4 bg-white"></div>
+
+                        <div>
+                            <div class="ml-10 w-4 h-4 bg-white"></div>
+                            <div class="my-2 w-24 h-16 bg-white text-black text-center">отступы</div>
+                            <div class="ml-10 w-4 h-4 bg-white"></div>
+                        </div>
+
+                        <div class="w-4 h-4 bg-white"></div>
+                    </div>
+                    {/*
 					<For each={paddings}>
 						{
 							(p) => 
@@ -220,7 +234,18 @@ function Properties(props){
 								</select>
 							</div>
 						}
-					</For>
+					</For>*/}
+                    <div class="my-2 flex justify-evenly items-center">
+                        <div class="w-4 h-4 bg-white"></div>
+
+                        <div>
+                            <div class="ml-10 w-4 h-4 bg-white"></div>
+                            <div class="my-2 w-24 h-16 bg-white text-black text-center">вторая хрень</div>
+                            <div class="ml-10 w-4 h-4 bg-white"></div>
+                        </div>
+
+                        <div class="w-4 h-4 bg-white"></div>
+                    </div>
 
 					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
