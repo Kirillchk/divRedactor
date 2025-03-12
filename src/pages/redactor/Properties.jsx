@@ -142,9 +142,9 @@ function Properties(props){
 		<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
 		<div class="mx-2 mt-1 h-5/6 flex justify-center">
-			<div class="bg-gray-900 rounded bg-opacity-60 h-full w-48 text-gray-400 flex overflow-auto shadow-2xl">
+			<div class="bg-gray-900 rounded bg-opacity-60 h-full w-48 text-gray-400 flex overflow-auto">
 				<nav>
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+					<div class="mt-1 bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							display
 						</div>

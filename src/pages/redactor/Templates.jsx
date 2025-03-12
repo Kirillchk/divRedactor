@@ -17,19 +17,49 @@ function Templates(props){
 		document.createElement('input')
 	]
 	compsList.forEach((comp) => comp.innerText = 'lorem' )
-	return(
+	return (
 		<>
-			<nav class="fixed z-10 inset-x-0 bottom-0 bg-gray-800 bg-opacity-95 h-48 w-screen flex justify-between items-center">
-                <For each={compsList} fallback={<div>Loading...</div>}>
-                    {(comp) => 
-                        <div class="bg-gray-700 bg-opacity-95 rounded-lg h-10 w-48 text-gray-400 hover:text-gray-200 hover:bg-gray-600 flex justify-around items-center">                                    
-                            <Template emitDragg={props.emitDragg}>
-                                {comp}
-                            </Template>
-                        </div>
-                    }
-                </For>
-			</nav>
+			<div class="fixed z-10 inset-x-0 bottom-0 bg-gray-800 bg-opacity-95 h-48 w-screen flex justify-left">
+				<div class="mt-2 ml-2 mr-2 w-44 h-44 bg-gray-900 rounded text-gray-400">
+					<div class="w-full h-8 text-gray-300 flex justify-center items-center">контейнеры</div>
+
+					<div class="bg-gray-600 border border-gray-800 h-1 w-full"></div>
+
+					<div class="w-full mt-1 h-34 overflow-auto">
+						<ul>
+							<For each={compsList} fallback={<div>Loading...</div>}>
+								{(comp) => 
+									<li class="w-40 h-8 bg-gray-700 rounded ml-2 mb-1 text-gray-400 text-center">                                    
+										<Template emitDragg={props.emitDragg}>
+											{comp}
+										</Template>	
+									</li>
+								}
+							</For>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2 ml-2 mr-2 w-44 h-44 bg-gray-900 rounded text-gray-400">
+					<div class="w-full h-8 text-gray-300 flex justify-center items-center">контейнеры</div>
+
+					<div class="bg-gray-600 border border-gray-800 h-1 w-full"></div>
+
+					<div class="w-full mt-1 h-34 overflow-auto">
+						<ul>
+							<For each={compsList} fallback={<div>Loading...</div>}>
+								{(comp) => 
+									<li class="w-40 h-8 bg-gray-700 rounded ml-2 mb-1 text-gray-400 text-center">                                    
+										<Template emitDragg={props.emitDragg}>
+											{comp}
+										</Template>	
+									</li>
+								}
+							</For>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</>
 	)
 }
