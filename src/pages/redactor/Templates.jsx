@@ -29,7 +29,7 @@ function Templates(props){
 						<ul>
 							<For each={compsList} fallback={<div>Loading...</div>}>
 								{(comp) => 
-									<li class="w-40 h-8 bg-gray-700 rounded ml-2 mb-1 text-gray-400 text-center">                                    
+									<li class="w-40 h-8 bg-gray-700 hover:bg-gray-500 opacity-75 rounded ml-2 mb-1 text-gray-300 hover:text-gray-100 text-center">                                    
 										<Template emitDragg={props.emitDragg}>
 											{comp}
 										</Template>	
@@ -49,7 +49,7 @@ function Templates(props){
 						<ul>
 							<For each={compsList} fallback={<div>Loading...</div>}>
 								{(comp) => 
-									<li class="w-40 h-8 bg-gray-700 rounded ml-2 mb-1 text-gray-400 text-center">                                    
+									<li class="w-40 h-8 bg-gray-700 hover:bg-gray-500 opacity-75 rounded ml-2 mb-1 text-gray-300 hover:text-gray-100 text-center">                                    
 										<Template emitDragg={props.emitDragg}>
 											{comp}
 										</Template>	

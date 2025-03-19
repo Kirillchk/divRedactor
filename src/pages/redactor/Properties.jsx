@@ -142,14 +142,14 @@ function Properties(props){
 		<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
 		<div class="mx-2 mt-1 h-5/6 flex justify-center">
-			<div class="bg-gray-900 rounded bg-opacity-60 h-full w-48 text-gray-400 flex overflow-auto">
+			<div class="bg-gray-900 rounded h-full w-48 text-gray-400 flex overflow-auto">
 				<nav>
-					<div class="mt-1 bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+					<div class="mt-1 h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							display
 						</div>
 
-						<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" id="display" value={display()} onChange={handleDisplayChange}>
+						<select class="rounded-md hover:bg-gray-700 w-1/2 h-4 ml-8 mr-1 text-gray-400 hover:text-gray-200" id="display" value={display()} onChange={handleDisplayChange}>
 							<For each={displays}>
 								{(d) =>
 									<option value={d}>
@@ -160,19 +160,19 @@ function Properties(props){
 						</select>
 					</div>
 
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							text
 						</div>
 
-						<input class="bg-gray-900 w-1/2 h-4 ml-8 mr-1" on:change={handleChangeInnerText} type="text" name="inner-text" id="inner-text"></input>
+						<input class="rounded-md hover:bg-gray-700 w-1/2 h-4 ml-8 mr-1" on:change={handleChangeInnerText} type="text" name="inner-text" id="inner-text"></input>
 					</div>
 
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							position
 						</div>
-						<select class="bg-gray-900 w-1/2 h-4 ml-6 mr-1" id="display" value={position()} onChange={handlePositionChange}>
+						<select class="rounded-md hover:bg-gray-700 w-1/2 h-5 ml-6 mr-1 text-gray-400 hover:text-gray-200" id="display" value={position()} onChange={handlePositionChange}>
 								<For each={positions}>
 									{
 										(p) =>
@@ -204,16 +204,50 @@ function Properties(props){
 						}
 					</For>*/}
 
-                    <div class="my-2 flex justify-evenly items-center">
-                        <div class="w-4 h-4 bg-white"></div>
+                    <div class="flex justify-evenly items-center">
+                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="ml" value="0" onChange={handleMtUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 
                         <div>
-                            <div class="ml-10 w-4 h-4 bg-white"></div>
-                            <div class="my-2 w-24 h-16 bg-white text-black text-center">отступы</div>
-                            <div class="ml-10 w-4 h-4 bg-white"></div>
+                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200 " id="mt" value="0" onChange={handleMtUpdate}>
+								<For each={tailwindValues}>
+									{(d) =>
+										<option value={d}>
+											{d}
+										</option>
+									}
+								</For>
+							</select>
+
+                            <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">отступы</div>
+
+                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mb" value="0" onChange={handleMtUpdate}>
+								<For each={tailwindValues}>
+									{(d) =>
+										<option value={d}>
+											{d}
+										</option>
+									}
+								</For>
+							</select>
                         </div>
 
-                        <div class="w-4 h-4 bg-white"></div>
+                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mr" value="0" onChange={handleMtUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
                     </div>
                     {/*
 					<For each={paddings}>
@@ -235,32 +269,66 @@ function Properties(props){
 							</div>
 						}
 					</For>*/}
-                    <div class="my-2 flex justify-evenly items-center">
-                        <div class="w-4 h-4 bg-white"></div>
+                    <div class="flex justify-evenly items-center">
+                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pl" value="0" onChange={handleMtUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
 
                         <div>
-                            <div class="ml-10 w-4 h-4 bg-white"></div>
-                            <div class="my-2 w-24 h-16 bg-white text-black text-center">вторая хрень</div>
-                            <div class="ml-10 w-4 h-4 bg-white"></div>
+                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pt" value="0" onChange={handleMtUpdate}>
+								<For each={tailwindValues}>
+									{(d) =>
+										<option value={d}>
+											{d}
+										</option>
+									}
+								</For>
+							</select>
+
+                            <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">вторая хрень</div>
+
+                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pb" value="0" onChange={handleMtUpdate}>
+								<For each={tailwindValues}>
+									{(d) =>
+										<option value={d}>
+											{d}
+										</option>
+									}
+								</For>
+							</select>
                         </div>
 
-                        <div class="w-4 h-4 bg-white"></div>
+                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pr" value="0" onChange={handleMtUpdate}>
+							<For each={tailwindValues}>
+								{(d) =>
+									<option value={d}>
+										{d}
+									</option>
+								}
+							</For>
+						</select>
                     </div>
 
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							color
 						</div>
 
-						<input class="bg-gray-900 w-1/2 h-4 ml-7 mr-1" type="color" id="color" value={color()} onInput={(e) => setColor(e.target.value)}></input>
+						<input class="w-1/2 h-4 ml-7 mr-1" type="color" id="color" value={color()} onInput={(e) => setColor(e.target.value)}></input>
 					</div>
 
-					<div class="bg-opacity-95 rounded h-6 w-full text-sm text-gray-400 flex justify-between items-center">
+					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							debug
 						</div>
 
-						<button class="rounded-lg bg-gray-700 bg-opacity-95 hover:bg-gray-600 w-1/2 h-4 ml-7  mr-1" type="submit">click</button>
+						<button class="rounded-md bg-gray-700 opacity-75 hover:bg-gray-500 w-1/2 h-4 ml-7 mr-1 text-gray-300 hover:text-gray-100 text-center" type="submit">click</button>
 					</div>
 				</nav>
 			</div>

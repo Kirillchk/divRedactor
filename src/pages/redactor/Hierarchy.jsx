@@ -32,8 +32,8 @@ function Hierarchy(props){
 			<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
 			<div class="mx-2 mt-1 h-5/6 flex justify-center">
-				<div class="bg-gray-900 rounded bg-opacity-60 h-full w-48 text-gray-400 hover:text-gray-200 flex overflow-auto">
-					<nav class="ml-2 mt-1" ref={insertHere}>
+				<div class="bg-gray-900 rounded h-full w-48 flex overflow-auto">
+					<nav class="ml-2 mt-1 text-gray-400" ref={insertHere}>
 					</nav>
 				</div>
 			</div>
