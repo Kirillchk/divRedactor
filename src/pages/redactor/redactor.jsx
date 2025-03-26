@@ -14,7 +14,7 @@ function Redactor() {
 	const [ReferenceFor, setReferenceFor] = createSignal({})
 	const [update, setupdate] = createSignal({})
 	const [REFERENCE, setREFERENCE] = createSignal({})
-	const [getUIshown, setUIshown] = createSignal(false)
+	const [getUIshown, setUIshown] = createSignal(true)
 	const [getShowGreen, setShowGreen] = createSignal(false)
 
 	function showProperties(e){

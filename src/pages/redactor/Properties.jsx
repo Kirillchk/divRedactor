@@ -1,12 +1,6 @@
 import { createSignal, createEffect } from 'solid-js';
-import { TailwindOptions } from './Components/TailwindOptions'
+import TailwindOptions from './Components/TailwindOptions.jsx'
 function Properties(props){
-	const tailwindValues = [
-		"0", "px", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", 
-		"5", "6", "7", "8", "9", "10", "11", "12", "14", "16", 
-		"20", "24", "28", "32", "36", "40", "44", "48", "52", 
-		"56", "60", "64", "72", "80", "96"
-	];
 	const margins = ['mt','mr','ml','mb']
 	const paddings = ['pt', 'pr', 'pl', 'pb']
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
@@ -148,7 +142,7 @@ function Properties(props){
 						<div class="ml-2">
 							display
 						</div>
-						<TailwindOptions/>
+						<TailwindOptions handle={handleMtUpdate}/>
 					</div>
 
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
@@ -163,7 +157,7 @@ function Properties(props){
 						<div class="ml-2">
 							position
 						</div>
-						<TailwindOptions/>
+						<TailwindOptions handle={handleMtUpdate}/>
 					</div>
                     {/*
 					<For each={margins}>
@@ -187,17 +181,17 @@ function Properties(props){
 					</For>*/}
 
                     <div class="flex justify-evenly items-center">
-						<TailwindOptions/>
+						<TailwindOptions handle={handleMtUpdate}/>
 
                         <div>
-							<TailwindOptions/>
+							<TailwindOptions handle={handleMtUpdate}/>
 
                             <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">отступы</div>
 
-							<TailwindOptions/>
+							<TailwindOptions handle={handleMtUpdate}/>
                         </div>
 
-						<TailwindOptions/>
+						<TailwindOptions handle={handleMtUpdate}/>
                     </div>
                     {/*
 					<For each={paddings}>
@@ -221,17 +215,17 @@ function Properties(props){
 					</For>*/}
                     <div class="flex justify-evenly items-center">
                         
-						<TailwindOptions/>
+						<TailwindOptions handle={handleMtUpdate}/>
 
                         <div>
-							<TailwindOptions/>
+							<TailwindOptions handle={handleMtUpdate}/>
 
                             <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">вторая хрень</div>
 
-							<TailwindOptions/>
+							<TailwindOptions handle={handleMtUpdate}/>
                         </div>
 
-						<TailwindOptions/>
+						<TailwindOptions handle={handleMtUpdate}/>
                     </div>
 
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
