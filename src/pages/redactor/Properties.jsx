@@ -1,5 +1,5 @@
 import { createSignal, createEffect } from 'solid-js';
-
+import { TailwindOptions } from './Components/TailwindOptions'
 function Properties(props){
 	const tailwindValues = [
 		"0", "px", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", 
@@ -148,16 +148,7 @@ function Properties(props){
 						<div class="ml-2">
 							display
 						</div>
-
-						<select class="rounded-md hover:bg-gray-700 w-1/2 h-4 ml-8 mr-1 text-gray-400 hover:text-gray-200" id="display" value={display()} onChange={handleDisplayChange}>
-							<For each={displays}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
+						<TailwindOptions/>
 					</div>
 
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
@@ -172,16 +163,7 @@ function Properties(props){
 						<div class="ml-2">
 							position
 						</div>
-						<select class="rounded-md hover:bg-gray-700 w-1/2 h-5 ml-6 mr-1 text-gray-400 hover:text-gray-200" id="display" value={position()} onChange={handlePositionChange}>
-								<For each={positions}>
-									{
-										(p) =>
-											<option value={p}>
-												{p}
-											</option>
-									}
-								</For>
-						</select>
+						<TailwindOptions/>
 					</div>
                     {/*
 					<For each={margins}>
@@ -205,49 +187,17 @@ function Properties(props){
 					</For>*/}
 
                     <div class="flex justify-evenly items-center">
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="ml" value="0" onChange={handleMtUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
+						<TailwindOptions/>
 
                         <div>
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200 " id="mt" value="0" onChange={handleMtUpdate}>
-								<For each={tailwindValues}>
-									{(d) =>
-										<option value={d}>
-											{d}
-										</option>
-									}
-								</For>
-							</select>
+							<TailwindOptions/>
 
                             <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">отступы</div>
 
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mb" value="0" onChange={handleMtUpdate}>
-								<For each={tailwindValues}>
-									{(d) =>
-										<option value={d}>
-											{d}
-										</option>
-									}
-								</For>
-							</select>
+							<TailwindOptions/>
                         </div>
 
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mr" value="0" onChange={handleMtUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
+						<TailwindOptions/>
                     </div>
                     {/*
 					<For each={paddings}>
@@ -270,49 +220,18 @@ function Properties(props){
 						}
 					</For>*/}
                     <div class="flex justify-evenly items-center">
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pl" value="0" onChange={handleMtUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
+                        
+						<TailwindOptions/>
 
                         <div>
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pt" value="0" onChange={handleMtUpdate}>
-								<For each={tailwindValues}>
-									{(d) =>
-										<option value={d}>
-											{d}
-										</option>
-									}
-								</For>
-							</select>
+							<TailwindOptions/>
 
                             <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">вторая хрень</div>
 
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pb" value="0" onChange={handleMtUpdate}>
-								<For each={tailwindValues}>
-									{(d) =>
-										<option value={d}>
-											{d}
-										</option>
-									}
-								</For>
-							</select>
+							<TailwindOptions/>
                         </div>
 
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pr" value="0" onChange={handleMtUpdate}>
-							<For each={tailwindValues}>
-								{(d) =>
-									<option value={d}>
-										{d}
-									</option>
-								}
-							</For>
-						</select>
+						<TailwindOptions/>
                     </div>
 
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
