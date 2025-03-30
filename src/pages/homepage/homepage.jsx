@@ -1,3 +1,11 @@
+import logo from '/src/assets/logo.png'
+import img0 from '/src/assets/0.png'
+import img1 from '/src/assets/1.png'
+import img2 from '/src/assets/2.png'
+import img3 from '/src/assets/3.png'
+import img4 from '/src/assets/4.png'
+import img5 from '/src/assets/5.png'
+
 function Homepage() {
   return (
     <div className="bg-gray-800 overflow-x-hidden" >
@@ -7,7 +15,7 @@ function Homepage() {
 			<a href="/" class="text-gray-200 text-2xl font-bold">
 				<img 
 					href="/"
-					src='/src/assets/logo.png'
+					src={logo}
 					className="mt-1 h-8"
 				/>
 		  	</a>
@@ -19,7 +27,7 @@ function Homepage() {
 
       {/* Изображение и заголовок */}
       <img
-        src="/src/assets/0.png"
+        src={img0}
         className="mt-10 w-full h-64 object-cover"
       />
       <div className="absolute inset-x-0 top-0 mt-10 m-auto text-gray-700 text-8xl font-bold pt-20 w-full h-64 text-center tracking-widest">
@@ -33,7 +41,7 @@ function Homepage() {
           <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
             <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
               <img
-                src="/src/assets/1.png"
+                src={img1}
                 className="mt-4 w-2/5 h-5/6"
               />
               <div className="mt-6 w-screen md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
@@ -51,7 +59,7 @@ function Homepage() {
                   в верхнем меню вы можете найти такие функции, как:<br /><br />меню - переход на главную страницу сайта(по нажатию логотипа)<br />загрузить - открыть внешний проект<br />сохранить - выгрузить созданный проект<br />новый проект - начать с чистого листа
               </div>
               <img
-                src="/src/assets/2.png"
+                src={img2}
                 className="mt-4 w-2/5 h-5/6"
               />
             </div>
@@ -63,7 +71,7 @@ function Homepage() {
           <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
             <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
             <img
-                src="/src/assets/3.png"
+                src={img3}
                 className="mt-4 w-2/5 h-5/6"
               />
               <div className="mt-6 w-screen md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
@@ -81,7 +89,7 @@ function Homepage() {
                   справа сверху находится окно с иерархией вашего проекта, с помощью него выможете отслеживать вложенность ваших элементов, а также группы, к которым они принадлежат
                 </div>
                 <img
-                  src="/src/assets/4.png"
+                  src={img4}
                   className="mt-4 w-2/5 h-5/6"
                 />
               </div>
@@ -93,7 +101,7 @@ function Homepage() {
             <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
               <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
               <img
-                  src="/src/assets/5.png"
+                  src={img5}
                   className="mt-4 w-2/5 h-5/6"
                 />
                 <div className="mt-6 w-screen md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
