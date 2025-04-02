@@ -54,7 +54,7 @@ function Redactor() {
 			let projectsName = prompt("Please enter your projects name:");
 			const record = await pb.collection('HTMLTable').create({
 				HTML: firstelement.innerHTML,
-				userID: pb.authStore.record.id,
+				userid: pb.authStore.record.id,
 				project_name: projectsName
 			})
 		} catch (e){
@@ -66,8 +66,9 @@ function Redactor() {
 	}
 	async function LoadRecords(){
 		try {
+			console.log(`${pb.authStore.record.id}`)
 			const records = await pb.collection('HTMLTable').getList(1, 50, {
-				filter: `userID="${pb.authStore.record.id}"`,
+				filter: `userid="${pb.authStore.record.id}"`,
 			})
 			setArrayOfProjects(records.items)
 		} catch (e){
@@ -82,7 +83,7 @@ function Redactor() {
 	}
 	createEffect(async ()=>{
 		setREFERENCE(firstelement)
-		Auth('testing@example.com', '1234567890')
+		Auth('MishaPassiv@gmail.com', 'RapesSedxswaSSS4')
 	})
 	const hint2 = (
 		<div
@@ -252,10 +253,6 @@ function Redactor() {
 											<div class="text-gray-400">
 												{project.created}
 											</div>
-										</div>
-
-										<div class="h-20 mt-4 mx-4 text-gray-500">
-											очков баранов без применения специализированной смазки
 										</div>
 
 										<div class="flex justify-around">
