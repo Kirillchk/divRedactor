@@ -61,15 +61,15 @@ function Redactor() {
 			console.log(e)
 		}
 	}
+	async function createNewProject(){
+		firstelement.innerHTML = ' '
+	}
 	async function LoadRecords(){
 		try {
 			const records = await pb.collection('HTMLTable').getList(1, 50, {
 				filter: `userID="${pb.authStore.record.id}"`,
 			})
 			setArrayOfProjects(records.items)
-			//records.items.forEach((obj)=> {
-			//	console.log(obj.created, obj.project_name, obj.HTML)
-			//})
 		} catch (e){
 			console.log(e)
 		}
@@ -152,7 +152,9 @@ function Redactor() {
 				setLoadShown(!getLoadShown())
 			}}
 			handleAuth={()=>setAuthShown(!getAuthShown())} 
-			handleSave={Saverecord}/>
+			handleSave={Saverecord}
+			handleNewProject={createNewProject}
+			/>
 			<Templates 
 				emitDragg={(arg) => {
 					console.log('Drag'); 
@@ -257,7 +259,11 @@ function Redactor() {
 										</div>
 
 										<div class="flex justify-around">
-											<button class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
+											<button onclick={async() => {
+												await pb.collection('HTMLTable').delete(project.id)
+												LoadRecords()
+											}}
+											class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
 												удалить
 											</button>
 											<button onclick={() => firstelement.innerHTML=project.HTML} class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">

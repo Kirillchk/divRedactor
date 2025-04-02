@@ -162,27 +162,6 @@ function Properties(props){
 							<TailwindOptions/>
 						</select>
 					</div>
-                    {/*
-					<For each={margins}>
-						{
-							(m) => 
-							<div class='flex justify-between items-center'>
-								<div class="ml-2">
-									{m}
-								</div>
-								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={m} value='0' onChange={handleMtUpdate}>
-									<For each={tailwindValues}>
-										{(d) =>
-											<option value={d}>
-												{d}
-											</option>
-										}
-									</For>
-								</select>
-							</div>
-						}
-					</For>*/}
-
                     <div class="flex justify-evenly items-center">
                         <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="ml" value="0" onChange={handleMtUpdate}>
 							<TailwindOptions/>
@@ -204,26 +183,6 @@ function Properties(props){
 							<TailwindOptions/>
 						</select>
                     </div>
-                    {/*
-					<For each={paddings}>
-						{
-							(p) => 
-							<div class='flex justify-between items-center'>
-								<div class="ml-2">
-									{p}
-								</div>
-								<select class="bg-gray-900 w-1/2 h-4 ml-8 mr-1 text-xs" id={p} value='0' onChange={handleMtUpdate}>
-									<For each={tailwindValues}>
-										{(d) =>
-											<option value={d}>
-												{d}
-											</option>
-										}
-									</For>
-								</select>
-							</div>
-						}
-					</For>*/}
                     <div class="flex justify-evenly items-center">
                         <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pl" value="0" onChange={handleMtUpdate}>
 							<TailwindOptions/>
