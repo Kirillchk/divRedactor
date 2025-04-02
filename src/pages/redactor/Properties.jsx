@@ -1,4 +1,4 @@
-import { createSignal, createEffect } from 'solid-js';
+import { createSignal } from 'solid-js';
 import TailwindOptions from './Components/TailwindOptions';
 
 function Properties(props){
@@ -127,9 +127,6 @@ function Properties(props){
 		})
 		props.elementRef.classList.add(res)
 	}
-	createEffect(() => {
-		console.log(props.elementRef)
-	})
   return (
 	<form class="h-2/5" onSubmit={handleSubmit}>
         <div class="-mt-4 mx-2 h-10 text-gray-300 flex justify-center items-center">css редактор</div>
