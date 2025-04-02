@@ -3,6 +3,7 @@ import Templates from "./Templates";
 import Properties from './Properties'
 import Hierarchy from './Hierarchy'
 import { createSignal, Show, createEffect } from "solid-js";
+import PocketBase from 'pocketbase'
 
 function Redactor() {
 	let firstelement;
@@ -14,9 +15,12 @@ function Redactor() {
 	const [ReferenceFor, setReferenceFor] = createSignal({})
 	const [update, setupdate] = createSignal({})
 	const [REFERENCE, setREFERENCE] = createSignal({})
+	const [getArrayOfProjects, setArrayOfProjects] = createSignal([])
+
 	const [getUIshown, setUIshown] = createSignal(true)
 	const [getShowGreen, setShowGreen] = createSignal(false)
-
+	const [getAuthShown, setAuthShown] = createSignal(false)
+	const [getLoadShown, setLoadShown] = createSignal(false)
 	function showProperties(e){
 		setReferenceFor(e.target)
 	}
@@ -44,8 +48,42 @@ function Redactor() {
 			console.log('UI visibility is now', getUIshown())
 		}
 	})
-	createEffect(()=>{
+	const pb = new PocketBase('http://127.0.0.1:8090')
+	async function Saverecord(){
+		try {
+			let projectsName = prompt("Please enter your projects name:");
+			const record = await pb.collection('HTMLTable').create({
+				HTML: firstelement.innerHTML,
+				userid: pb.authStore.record.id,
+				project_name: projectsName
+			})
+		} catch (e){
+			console.log(e)
+		}
+	}
+	async function createNewProject(){
+		firstelement.innerHTML = ' '
+	}
+	async function LoadRecords(){
+		try {
+			console.log(`${pb.authStore.record.id}`)
+			const records = await pb.collection('HTMLTable').getList(1, 50, {
+				filter: `userid="${pb.authStore.record.id}"`,
+			})
+			setArrayOfProjects(records.items)
+		} catch (e){
+			console.log(e)
+		}
+	}
+	async function Auth(email, password){
+		const authData = await pb.collection("users").authWithPassword(email, password);
+		console.log(pb.authStore.isValid);
+		console.log(pb.authStore.token);
+		console.log(pb.authStore.record.id);
+	}
+	createEffect(async ()=>{
 		setREFERENCE(firstelement)
+		Auth('MishaPassiv@gmail.com', 'RapesSedxswaSSS4')
 	})
 	const hint2 = (
 		<div
@@ -107,9 +145,17 @@ function Redactor() {
   </footer>
 </div>
 
-		</div>
+	</div>
 		<Show when={getUIshown()}>
-			<Header/>
+			<Header 
+			handleLoad={()=>{
+				LoadRecords()
+				setLoadShown(!getLoadShown())
+			}}
+			handleAuth={()=>setAuthShown(!getAuthShown())} 
+			handleSave={Saverecord}
+			handleNewProject={createNewProject}
+			/>
 			<Templates 
 				emitDragg={(arg) => {
 					console.log('Drag'); 
@@ -121,6 +167,123 @@ function Redactor() {
 				<Hierarchy emitUpdate={/*wtf?*/setupdate} bodyRef={REFERENCE()}/>
 				<Properties elementRef={ReferenceFor()}/>
 			</nav>
+		</Show>
+		<Show when={getAuthShown()}>
+			<div class="fixed inset-0 z-20 flex flex-col justify-center">
+				<div class="bg-gray-800 opacity-80 backdrop-blur-3xl w-screen h-screen">
+				</div>
+				<div class="z-20 h-2/4 w-screen fixed z-20 flex justify-center">
+					<form id='formid' onsubmit={(e)=>{
+						e.preventDefault();
+						const formData = new FormData(e.target);
+						const email = formData.get('email');
+						const password = formData.get('password');
+						console.log('Submitted:', { email, password })
+						Auth(email, password)
+					}} class="bg-gray-900 w-1/4 h-full rounded-3xl shadow-2xl">
+						<div class="w-full h-24 flex justify-between">
+							<div class="w-full h-24 mt-8 text-2xl text-gray-400 text-center">
+								&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp авторизация
+							</div>
+							<div onclick={()=>setAuthShown(!getAuthShown())} class="mt-6 w-24 h-24 text-xl text-gray-400 text-center">
+								X
+							</div>
+						</div>
+						<div class="h-4/6 w-full flex justify-center">
+							<div class="h-3/6 w-5/6 flex flex-col justify-around">
+								<div>
+									<div class="h-6 ml-4 w-full text-gray-400 text-start">
+									почта
+									</div>
+									<input 
+									name="email"
+									type="email"
+									class="h-10 w-full bg-gray-800 rounded-xl shadow-2xl"
+									/>
+								</div>
+								<div>
+									<div class="h-6 ml-4 w-full text-gray-400 text-start">
+									пароль
+									</div>
+									<input 
+									name="password"  // Added name attribute
+									type="password"  // Hides input for passwords
+									class="h-10 w-full bg-gray-800 rounded-xl shadow-2xl"
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex justify-around">
+							<button type="submit" form="formid" class="w-1/3 h-10 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
+								вход
+							</button>
+							<button class="w-1/3 h-10 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
+								регистрация
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</Show>
+		<Show when={getLoadShown()}>
+			<div class="fixed inset-0 z-20 flex flex-col justify-center">
+				<div class="bg-gray-800 opacity-80 backdrop-blur-3xl w-screen h-screen">
+
+				</div>
+				<div class="z-20 h-3/4 w-screen fixed z-20 flex justify-center">
+					<div class="bg-gray-900 w-3/5 h-full rounded-3xl shadow-2xl">
+						<div class="w-full h-24 flex justify-between">
+							<div class="w-full h-24 mt-8 text-2xl text-gray-400 text-center">
+								&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp список проектов
+							</div>
+							<div onclick={()=>setLoadShown(!getLoadShown())} class="mt-6 w-24 h-24 text-xl text-gray-400 text-center">
+								X
+							</div>
+						</div>
+						<div class="h-10/12 w-full flex justify-center">
+							<nav class="bg-gray-800 rounded-xl h-full w-11/12 overflow-auto">
+							<For each={getArrayOfProjects()}>
+								{(project) =>
+									<div class="ml-11 my-4 w-11/12 h-48 rounded-xl bg-gray-700 flex">
+									<div class="h-full w-2/6 flex flex-col justify-center">
+										<img
+											//src={img2}
+											className="ml-4 h-5/6"
+										/>
+									</div>
+
+									<div class="ml-32 mt-4 h-5/6 w-3/6 bg-gray-800 rounded-xl">
+										<div class="h-6 flex justify-around text-xl">
+											<div class="text-gray-300">
+												{project.project_name}
+											</div>
+											<div class="text-gray-400">
+												{project.created}
+											</div>
+										</div>
+
+										<div class="flex justify-around">
+											<button onclick={async() => {
+												await pb.collection('HTMLTable').delete(project.id)
+												LoadRecords()
+											}}
+											class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
+												удалить
+											</button>
+											<button onclick={() => firstelement.innerHTML=project.HTML} class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
+												загрузить
+											</button>
+										</div>
+									</div>
+								</div>
+								}
+							</For>
+								
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
 		</Show>
 	</div>
   );
