@@ -2,6 +2,12 @@ import { createSignal } from 'solid-js';
 import TailwindOptions from './Components/TailwindOptions';
 
 function Properties(props){
+	const tailwindValues = [
+	"0", "px", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", 
+	"5", "6", "7", "8", "9", "10", "11", "12", "14", "16", 
+	"20", "24", "28", "32", "36", "40", "44", "48", "52", 
+	"56", "60", "64", "72", "80", "96"];
+
 	const margins = ['mt','mr','ml','mb']
 	const paddings = ['pt', 'pr', 'pl', 'pb']
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
@@ -145,7 +151,6 @@ function Properties(props){
 							<TailwindOptions/>
 						</select>
 					</div>
-
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							text
@@ -153,7 +158,6 @@ function Properties(props){
 
 						<input class="rounded-md hover:bg-gray-700 w-1/2 h-4 ml-8 mr-1" on:change={handleChangeInnerText} type="text" name="inner-text" id="inner-text"></input>
 					</div>
-
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
 							position
@@ -163,44 +167,44 @@ function Properties(props){
 						</select>
 					</div>
                     <div class="flex justify-evenly items-center">
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="ml" value="0" onChange={handleMtUpdate}>
+                        <select onChange={handleMlUpdate} class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="ml" value="0">
 							<TailwindOptions/>
 						</select>
 
                         <div>
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200 " id="mt" value="0" onChange={handleMtUpdate}>
+                            <select onChange={handleMtUpdate} class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200 " id="mt" value="0">
 								<TailwindOptions/>
 							</select>
 
                             <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">отступы</div>
 
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mb" value="0" onChange={handleMtUpdate}>
+                            <select onChange={handleMbUpdate} class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mb" value="0">
 								<TailwindOptions/>
 							</select>
                         </div>
 
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mr" value="0" onChange={handleMtUpdate}>
+                        <select onChange={handleMrUpdate} class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mr" value="0">
 							<TailwindOptions/>
 						</select>
                     </div>
                     <div class="flex justify-evenly items-center">
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pl" value="0" onChange={handleMtUpdate}>
+                        <select onChange={handlePlUpdate} class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pl" value="0">
 							<TailwindOptions/>
 						</select>
 
                         <div>
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pt" value="0" onChange={handleMtUpdate}>
+                            <select onChange={handlePtUpdate} class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pt" value="0">
 								<TailwindOptions/>
 							</select>
 
-                            <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">вторая хрень</div>
+                            <div onChange={handlePlUpdate} class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">вторая хрень</div>
 
-                            <select class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pb" value="0" onChange={handleMtUpdate}>
+                            <select onChange={handlePbUpdate} class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pb" value="0">
 								<TailwindOptions/>
 							</select>
                         </div>
 
-                        <select class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pr" value="0" onChange={handleMtUpdate}>
+                        <select onChange={handlePrUpdate} class="rounded-md w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pr" value="0">
 							<TailwindOptions/>
 						</select>
                     </div>
