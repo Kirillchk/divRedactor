@@ -6,7 +6,9 @@ import img3 from "/src/assets/3.png";
 import img4 from "/src/assets/4.png";
 import img5 from "/src/assets/5.png";
 
+
 function Homepage() {
+
   return (
     <div className="bg-gray-800 overflow-x-hidden">
       {/* Навигационная панель */}
@@ -30,86 +32,120 @@ function Homepage() {
       {/* Основной контент */}
       <nav className="bg-gray-600 rounded-lg mx-4 md:mx-24 mt-4 w-auto h-full mb-8">
         {/* Карточка 1 */}
-        <div className="mx-4 md:mx-24 h-96 flex justify-center items-center">
-          <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
-            <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-              <img src={img1} className="mt-4 w-2/5 h-5/6" />
-              <div className="mt-6 w-screen md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
-                Наш проект является конструктором сайтов с возможностью
-                изменения разметки HTML и внешнего вида CSS, созданным для
-                облегчённого создания сайтов и более наглядного обучения в сфере
-                frontend разработки.
+        <div className="bg-gray-600 rounded-lg mx-4 md:mx-24 my-4 w-auto">
+          <div className="p-4 md:p-6">
+            <div
+              className="bg-gray-700 hover:bg-gray-800 hover:shadow-lg hover:shadow-gray-500/20
+             transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out rounded-lg
+              mx-2 p-4 w-full text-gray-200"
+            >
+              <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                <img
+                  src={img1}
+                  className="mt-4 w-2/5 h-5/6 object-cover transition-all duration-500 ease-out hover:scale-104 transform-gpu"
+                />
+                <div className="w-full md:w-3/5 text-lg md:text-xl leading-relaxed">
+                  Наш проект является конструктором сайтов с возможностью
+                  изменения разметки HTML и внешнего вида CSS, созданным для
+                  облегчённого создания сайтов и более наглядного обучения в
+                  сфере frontend разработки.
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Карточка 2 */}
-        <div className="mx-4 md:mx-24 h-128 flex justify-center items-center ">
-          <div className="bg-gray-700 rounded-lg mx-2 h-128 w-full text-gray-200 shadow-2xl">
-            <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-              <div className="mt-6 w-full md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
-                Для открытия интерфейса нажмите SHIFT + H.
-                <br />
-                <br />
-                В верхнем меню вы можете найти такие функции, как:
-                <br />
-                <br />
-                Меню - переход на главную страницу сайта (по нажатию на
-                голотип).
-                <br />
-                Загрузить - открыть внешний проект.
-                <br />
-                Сохранить - выгрузить созданный проект.
-                <br />
-                Новый проект - создать новый проект.
+        <div className="bg-gray-600 rounded-lg mx-4 md:mx-24 my-4 w-auto">
+          <div className="p-4 md:p-6">
+            <div
+              className="bg-gray-700 hover:bg-gray-800 hover:shadow-lg hover:shadow-gray-500/20 
+          transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out rounded-lg mx-2 
+          p-4 w-full text-gray-200"
+            >
+              <div className="flex flex-col md:flex-row-reverse gap-4 md:gap-8 items-center">
+                <img
+                  src={img2}
+                  className="mt-4 w-2/5 h-5/6 object-cover transition-all duration-500 ease-out hover:scale-104 transform-gpu"
+                />
+                <div className="w-full md:w-3/5 text-lg md:text-xl leading-relaxed">
+                  Для открытия интерфейса нажмите SHIFT + H. В верхнем меню вы
+                  можете найти такие функции, как: Меню - переход на главную
+                  страницу сайта (по нажатию на голотип). Загрузить - открыть
+                  внешний проект. Сохранить - выгрузить созданный проект. Новый
+                  проект - создать новый проект.
+                </div>
               </div>
-              <img src={img2} className="mt-4 w-2/5 h-5/6" />
             </div>
           </div>
         </div>
 
         {/* Карточка 3 */}
-        <div className="mx-4 md:mx-24 h-96 flex justify-center items-center">
-          <div className="bg-gray-700 rounded-lg mx-2 h-80 w-full text-gray-200 shadow-2xl">
-            <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-              <img src={img3} className="mt-4 w-2/5 h-5/6" />
-              <div className="mt-6 w-screen md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
-                <br />
-                <br />В левой части экрана распологается список готовых шаблонов
-                элементов, которые вы можете использовать при создании своего
-                проекта, в дальнейшем вы сможете их видоизменять.
+        <div className="bg-gray-600 rounded-lg mx-4 md:mx-24 my-4 w-auto">
+          <div className="p-4 md:p-6">
+            <div
+              className="bg-gray-700 hover:bg-gray-800 hover:shadow-lg 
+            hover:shadow-gray-500/20 transform hover:-translate-y-0.5 transition-all duration-300 
+            ease-in-out rounded-lg mx-2 p-4 w-full text-gray-200"
+            >
+              <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                <img
+                  src={img3}
+                  className="mt-4 w-2/5 h-5/6 object-cover transition-all duration-500 ease-out hover:scale-104 transform-gpu"
+                />
+                <div className="w-full md:w-3/5 text-lg md:text-xl leading-relaxed">
+                  В левой части экрана распологается список готовых шаблонов
+                  элементов, которые вы можете использовать при создании своего
+                  проекта, в дальнейшем вы сможете их видоизменять.
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Карточка 4 */}
-        <div className="mx-4 md:mx-24 h-96 flex justify-center items-center ">
-          <div className="bg-gray-700 rounded-lg mx-2 h-[260px] w-full text-gray-200 shadow-2xl">
-            <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-              <div className="mt-6 w-full md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
-                
-                <br />
-                Справа сверху находится окно с иерархией вашего проекта, с
-                помощью него вы можете отслеживать вложенность ваших элементов,
-                а также группы, к которым они принадлежат.
+
+        <div className="bg-gray-600 rounded-lg mx-4 md:mx-24 my-4 w-auto">
+          <div className="p-4 md:p-6">
+            <div
+              className="bg-gray-700 hover:bg-gray-800 hover:shadow-lg 
+          hover:shadow-gray-500/20 transform hover:-translate-y-0.5 transition-all 
+          duration-300 ease-in-out rounded-lg mx-2 p-4 w-full text-gray-200"
+            >
+              <div className="flex flex-col md:flex-row-reverse gap-4 md:gap-8 items-center">
+                <img
+                  src={img4}
+                  className="mt-4 w-2/5 h-5/6 object-cover transition-all duration-500 ease-out hover:scale-104 transform-gpu"
+                />
+                <div className="w-full md:w-3/5 text-lg md:text-xl leading-relaxed">
+                  Справа сверху находится окно с иерархией вашего проекта, с
+                  помощью него вы можете отслеживать вложенность ваших
+                  элементов, а также группы, к которым они принадлежат.
+                </div>
               </div>
-              <img src={img4} className="mt-4 w-2/5 h-5/6" />
             </div>
           </div>
         </div>
 
         {/* Карточка 5 */}
-        <div className="mx-4 md:mx-24 h-96 flex justify-center items-center">
-          <div className="bg-gray-700 rounded-lg mx-2 h-[260px] w-full text-gray-200 shadow-2xl">
-            <div className="mx-4 md:mx-10 flex flex-col md:flex-row justify-between">
-              <img src={img5} className="mt-4 w-2/5 h-5/6" />
-              <div className="mt-6 w-screen md:w-3/6 h-auto text-xl text-left tracking-wider leading-8">
-                <br />
-                <br />В нижней же части правого меню находится редактор CSS,
-                изменяя параметры выбранного свойства объекта вы сможете
-                изменять внешний вид элементов.
+
+        <div className="bg-gray-600 rounded-lg mx-4 md:mx-24 my-4 w-auto">
+          <div className="p-4 md:p-6">
+            <div
+              className="bg-gray-700 hover:bg-gray-800 hover:shadow-lg hover:shadow-gray-500/20 
+          transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out rounded-lg 
+          mx-2 p-4 w-full text-gray-200"
+            >
+              <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                <img
+                  src={img5}
+                  className="mt-4 w-2/5 h-5/6 object-cover transition-all duration-500 ease-out hover:scale-104 transform-gpu"
+                />
+                <div className="w-full md:w-3/5 text-lg md:text-xl leading-relaxed">
+                  В нижней же части правого меню находится редактор CSS, изменяя
+                  параметры выбранного свойства объекта вы сможете изменять
+                  внешний вид элементов.
+                </div>
               </div>
             </div>
           </div>
