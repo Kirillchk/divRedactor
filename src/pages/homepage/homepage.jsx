@@ -10,10 +10,10 @@ function Homepage() {
   return (
     <div className="bg-gray-800 overflow-x-hidden">
       {/* Навигационная панель */}
-      <nav className="fixed inset-0 z-10 h-10 bg-gray-900 opacity-100 hover:opacity-100">
+      <nav className="fixed inset-0 z-10 h-16 bg-gray-900 opacity-100 hover:opacity-100">
         <div className="mx-10 flex justify-between items-center">
           <a href="/" class="text-gray-200 text-2xl font-bold">
-            <img href="/" src={logo} className="mt-1 h-8" />
+            <img href="/" src={logo} className="mt-1 h-[60px]" />
           </a>
           <a href="/redactor" className="text-gray-400 hover:text-gray-200">
             Cоздать Проект
@@ -24,7 +24,7 @@ function Homepage() {
       {/* Изображение и заголовок */}
       <img src={img0} className="mt-10 w-full h-64 object-cover" />
       <div className="absolute inset-x-0 top-0 mt-10 m-auto text-gray-700 text-8xl font-bold pt-20 w-full h-64 text-center tracking-widest ">
-        <div className=" transition-all duration-500 ease-out hover:scale-120 transform-gpu">
+        <div className="duration-500 ease-out hover:scale-130 transform-gpu">
           DIVredactor
         </div>
       </div>
