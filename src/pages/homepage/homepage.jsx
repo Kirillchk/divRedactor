@@ -6,9 +6,7 @@ import img3 from "/src/assets/3.png";
 import img4 from "/src/assets/4.png";
 import img5 from "/src/assets/5.png";
 
-
 function Homepage() {
-
   return (
     <div className="bg-gray-800 overflow-x-hidden">
       {/* Навигационная панель */}
@@ -25,8 +23,10 @@ function Homepage() {
 
       {/* Изображение и заголовок */}
       <img src={img0} className="mt-10 w-full h-64 object-cover" />
-      <div className="absolute inset-x-0 top-0 mt-10 m-auto text-gray-700 text-8xl font-bold pt-20 w-full h-64 text-center tracking-widest">
-        DIVredactor
+      <div className="absolute inset-x-0 top-0 mt-10 m-auto text-gray-700 text-8xl font-bold pt-20 w-full h-64 text-center tracking-widest ">
+        <div className=" transition-all duration-500 ease-out hover:scale-120 transform-gpu">
+          DIVredactor
+        </div>
       </div>
 
       {/* Основной контент */}
@@ -68,7 +68,7 @@ function Homepage() {
                   src={img2}
                   className="mt-4 w-2/5 h-5/6 object-cover transition-all duration-500 ease-out hover:scale-104 transform-gpu"
                 />
-                <div className="w-full md:w-3/5 text-lg md:text-xl leading-relaxed">
+                <div className="w-full md:w-3/5 text-xl md:text-xl leading-relaxed  ">
                   Для открытия интерфейса нажмите SHIFT + H. В верхнем меню вы
                   можете найти такие функции, как: Меню - переход на главную
                   страницу сайта (по нажатию на голотип). Загрузить - открыть
