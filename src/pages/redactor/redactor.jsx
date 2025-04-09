@@ -182,13 +182,13 @@ function Redactor() {
 						Auth(email, password)
 					}} class="bg-gray-900 w-1/4 h-full rounded-3xl shadow-2xl">
 						<div class="mt-8 text-2xl text-gray-400 text-center">
-							аунтификация
+						Аутентификация
 						</div>
 						<div class="h-4/6 w-full flex justify-center">
 							<div class="h-3/6 w-5/6 mt-8 flex flex-col justify-around">
 								<div>
 									<div class="h-6 ml-4 w-full text-gray-400 text-start">
-									почта
+									Почта
 									</div>
 									<input 
 									name="email"
@@ -198,7 +198,7 @@ function Redactor() {
 								</div>
 								<div>
 									<div class="h-6 ml-4 w-full text-gray-400 text-start">
-									пароль
+									Пароль
 									</div>
 									<input 
 									name="password"  // Added name attribute
@@ -210,13 +210,13 @@ function Redactor() {
 						</div>
 						<div class="mt-6 flex justify-around">
 							<button type="submit" form="formid" class="w-1/3 h-10 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
-								вход
+								Вход
 							</button>
 							<button onclick={()=>setAuthShown(!getAuthShown())} class="w-1/3 h-10 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
 								X
 							</button>
 							<button class="w-1/3 h-10 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
-								регистрация
+								Регистрация
 							</button>
 						</div>
 					</form>
@@ -231,7 +231,7 @@ function Redactor() {
 				<div class="z-20 h-3/4 w-screen fixed z-20 flex justify-center">
 					<div class="bg-gray-900 w-3/5 h-full rounded-3xl shadow-2xl">
 						<div onclick={()=>setLoadShown(!getLoadShown())} class="mt-6 text-2xl text-gray-400 text-center">
-							закрыть список проектов
+							Закрыть список проектов
 						</div>
 						<div class="h-10/12 mt-6 w-full flex justify-center">
 							<nav class="bg-gray-800 rounded-xl h-full w-11/12 overflow-auto">
@@ -261,10 +261,10 @@ function Redactor() {
 												LoadRecords()
 											}}
 											class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
-												удалить
+												Удалить
 											</button>
 											<button onclick={() => firstelement.innerHTML=project.HTML} class="w-1/3 h-8 bg-gray-700 text-gray-400 rounded-xl shadow-2xl">
-												загрузить
+												Загрузить
 											</button>
 										</div>
 									</div>

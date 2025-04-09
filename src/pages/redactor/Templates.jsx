@@ -21,7 +21,7 @@ function Templates(props){
 		<>
 			<div class="fixed z-10 inset-x-0 bottom-0 bg-gray-800 bg-opacity-95 h-48 w-screen flex justify-left">
 				<div class="mt-2 ml-2 mr-2 w-44 h-44 bg-gray-900 rounded text-gray-400">
-					<div class="w-full h-8 text-gray-300 flex justify-center items-center">контейнеры</div>
+					<div class="w-full h-8 text-gray-300 flex justify-center items-center">Контейнеры</div>
 
 					<div class="bg-gray-600 border border-gray-800 h-1 w-full"></div>
 
@@ -41,7 +41,7 @@ function Templates(props){
 				</div>
 
 				<div class="mt-2 ml-2 mr-2 w-44 h-44 bg-gray-900 rounded text-gray-400">
-					<div class="w-full h-8 text-gray-300 flex justify-center items-center">контейнеры</div>
+					<div class="w-full h-8 text-gray-300 flex justify-center items-center">Контейнеры</div>
 
 					<div class="bg-gray-600 border border-gray-800 h-1 w-full"></div>
 

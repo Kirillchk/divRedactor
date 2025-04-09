@@ -135,7 +135,7 @@ function Properties(props){
 	}
   return (
 	<form class="h-2/5" onSubmit={handleSubmit}>
-        <div class="-mt-4 mx-2 h-10 text-gray-300 flex justify-center items-center">css редактор</div>
+        <div class="-mt-4 mx-2 h-10 text-gray-300 flex justify-center items-center">CSS Редактор</div>
 
 		<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
@@ -144,7 +144,7 @@ function Properties(props){
 				<nav>
 					<div class="mt-1 h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
-							display
+							Display
 						</div>
 
 						<select class="rounded-md hover:bg-gray-700 w-1/2 h-4 ml-8 mr-1 text-gray-400 hover:text-gray-200" id="display" value={display()} onChange={handleDisplayChange}>
@@ -153,14 +153,14 @@ function Properties(props){
 					</div>
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
-							text
+							Text
 						</div>
 
 						<input class="rounded-md hover:bg-gray-700 w-1/2 h-4 ml-8 mr-1" on:change={handleChangeInnerText} type="text" name="inner-text" id="inner-text"></input>
 					</div>
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
-							position
+							Position
 						</div>
 						<select class="rounded-md hover:bg-gray-700 w-1/2 h-5 ml-6 mr-1 text-gray-400 hover:text-gray-200" id="display" value={position()} onChange={handlePositionChange}>
 							<TailwindOptions/>
@@ -211,7 +211,7 @@ function Properties(props){
 
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
-							color
+							Color
 						</div>
 
 						<input class="w-1/2 h-4 ml-7 mr-1" type="color" id="color" value={color()} onInput={(e) => setColor(e.target.value)}></input>
@@ -219,7 +219,7 @@ function Properties(props){
 
 					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
-							debug
+							Debug
 						</div>
 
 						<button class="rounded-md bg-gray-700 opacity-75 hover:bg-gray-500 w-1/2 h-4 ml-7 mr-1 text-gray-300 hover:text-gray-100 text-center" type="submit">click</button>

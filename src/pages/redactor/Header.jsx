@@ -15,10 +15,10 @@ import logo from '/src/assets/logo.png'
 			</a>
 
 			<div class="space-x-5">
-				<button onclick={props.handleLoad} class="text-gray-400 hover:text-gray-200"> загрузить </button>
-				<button onclick={props.handleSave} class="text-gray-400 hover:text-gray-200">сохранить</button>
+				<button onclick={props.handleLoad} class="text-gray-400 hover:text-gray-200">Загрузить </button>
+				<button onclick={props.handleSave} class="text-gray-400 hover:text-gray-200">Сохранить</button>
 				<button onclick={props.handleAuth} class="text-gray-400 hover:text-gray-200">Аккаунт</button>
-				<button onclick={props.handleNewProject} class="text-gray-400 hover:text-gray-200">новый проект</button>
+				<button onclick={props.handleNewProject} class="text-gray-400 hover:text-gray-200">Новый проект</button>
 				
 				<form class=" text-gray-400 hover:text-gray-200">
 					

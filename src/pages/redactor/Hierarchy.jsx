@@ -27,7 +27,7 @@ function Hierarchy(props){
 	})
 	return(
 		<div class="h-2/5">
-			<div class="mt-10 mx-2 h-10 text-gray-300 flex justify-center items-center" on:click={Handle}>иерархия элементов</div>
+			<div class="mt-10 mx-2 h-10 text-gray-300 flex justify-center items-center" on:click={Handle}>Иерархия элементов</div>
 
 			<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
