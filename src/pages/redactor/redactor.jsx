@@ -156,17 +156,19 @@ function Redactor() {
 			handleSave={Saverecord}
 			handleNewProject={createNewProject}
 			/>
-			<Templates 
-				emitDragg={(arg) => {
-					console.log('Drag'); 
-					insertable = arg; 
-					setShowGreen(true);
-				}}
-			/>
-			<nav class="fixed inset-y-0 right-0 bg-gray-800 bg-opacity-95 h-screen w-48">
-				<Hierarchy emitUpdate={/*wtf?*/setupdate} bodyRef={REFERENCE()}/>
-				<Properties elementRef={ReferenceFor()}/>
-			</nav>
+			<div class="flex">
+				<Templates 
+					emitDragg={(arg) => {
+						console.log('Drag'); 
+						insertable = arg; 
+						setShowGreen(true);
+					}}
+				/>
+				<nav class="fixed inset-y-0 right-0 bg-gray-800 bg-opacity-95 h-screen w-48">
+					<Hierarchy emitUpdate={/*wtf?*/setupdate} bodyRef={REFERENCE()}/>
+					<Properties elementRef={ReferenceFor()}/>
+				</nav>
+			</div>
 		</Show>
 		<Show when={getAuthShown()}>
 			<div class="fixed inset-0 z-20 flex flex-col justify-center">

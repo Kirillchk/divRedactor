@@ -13,8 +13,7 @@ function Properties(props){
 	const displays = ['flex', 'block', 'inline', 'inline-block', 'hidden']
 	const positions = ['static', 'fixed', 'absolute', 'relative', 'sticky']
 	const [display, setdisplay] = createSignal('block')
-	const [position, setPosition] = createSignal('static')
-	const [color, setColor] = createSignal('#000000');
+	const [position, setPosition] = createSignal('static') 
 
 	function handleDisplayChange(event){
 		displays.forEach((d)=>{
@@ -140,7 +139,7 @@ function Properties(props){
 		<div class="bg-gray-500 border border-gray-700 h-1 w-full"></div>
 
 		<div class="mx-2 mt-1 h-5/6 flex justify-center">
-			<div class="bg-gray-900 rounded h-full w-48 text-gray-400 flex overflow-auto">
+			<div class="bg-gray-900 rounded h-full w-48 text-gray-400 flex ">
 				<nav>
 					<div class="mt-1 h-6 w-full text-sm text-gray-400 flex justify-between items-center">
 						<div class="ml-2">
@@ -176,7 +175,7 @@ function Properties(props){
 								<TailwindOptions/>
 							</select>
 
-                            <div class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">отступы</div>
+                            <div class="my-1 w-24 h-6 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">Margins</div>
 
                             <select onChange={handleMbUpdate} class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="mb" value="0">
 								<TailwindOptions/>
@@ -197,7 +196,7 @@ function Properties(props){
 								<TailwindOptions/>
 							</select>
 
-                            <div onChange={handlePlUpdate} class="my-1 w-24 h-16 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">вторая хрень</div>
+                            <div onChange={handlePlUpdate} class="my-1 w-24 h-6 bg-gray-700 opacity-75 border border-gray-500 text-base text-gray-300 text-center">Padings</div>
 
                             <select onChange={handlePbUpdate} class="rounded-md ml-9 w-6 h-4 bg-gray-700 opacity-75 hover:bg-gray-500 text-xs text-gray-400 hover:text-gray-200" id="pb" value="0">
 								<TailwindOptions/>
@@ -208,22 +207,6 @@ function Properties(props){
 							<TailwindOptions/>
 						</select>
                     </div>
-
-					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
-						<div class="ml-2">
-							Color
-						</div>
-
-						<input class="w-1/2 h-4 ml-7 mr-1" type="color" id="color" value={color()} onInput={(e) => setColor(e.target.value)}></input>
-					</div>
-
-					<div class="h-6 w-full text-sm text-gray-400 flex justify-between items-center">
-						<div class="ml-2">
-							Debug
-						</div>
-
-						<button class="rounded-md bg-gray-700 opacity-75 hover:bg-gray-500 w-1/2 h-4 ml-7 mr-1 text-gray-300 hover:text-gray-100 text-center" type="submit">click</button>
-					</div>
 				</nav>
 			</div>
 		</div>
